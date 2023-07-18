@@ -1,0 +1,38 @@
+{
+    "userType": "branduser",
+    "status": "success",
+    "data": {
+      "article": {
+        "title": "Sample Article",
+        "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit pretium ultrices. Ut id nisi non eros malesuada dapibus.",
+        "postingDate": "2023-07-10",
+        "season": "Summer",
+        "price": 100.5,
+        "status": "Open",
+        "errorMessage": ""
+      },
+      "dashboardView": {
+        "step3": {
+          "status": "Open",
+          "socialMediaTool": "Twitter"
+        },
+        "step4": {
+          "status": "Waiting for Approval",
+          "socialMediaTool": "Facebook"
+        },
+        "step5": {
+          "status": "Ready for Content",
+          "socialMediaTool": "Instagram"
+        },
+        "step6": {
+          "status": "Content Approval Waiting",
+          "socialMediaTool": "LinkedIn"
+        },
+        "step8": {
+          "status": "Invoiced",
+          "socialMediaTool": "Pinterest"
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,41 @@
+﻿
+<head>
+<title>Role Based Authentication</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<div class="login-container">
+    <img src="./assets/logo.png" alt="Company Logo" class="logo">
+    <div class="tagline">
+      <h1 class="MBOT">MBOT</h1>
+      <p class="Login">LOGIN</p>
+      <p class="sign-in">Sign In to access your account</p>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div>
+      <input type="text" placeholder="Username" formControlName="username" class="text-field"[ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Username is required</div>
+      </div>
+    </div>
+    <div>
+      <input type="password" placeholder="Password" formControlName="password" class="text-field" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+      </div>
+    </div>
+      <div class="login-button-container">
+      <button [disabled]="loading" class="login-button">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+        Login
+    </button>
+    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+      </div>
+      <a href="#" class="forgot-password">Forgot password?</a>
+</form>
+</div>
+  </div>
+  
+<app-sticky-footer></app-sticky-footer>

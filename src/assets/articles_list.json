@@ -1,0 +1,58 @@
+{
+  "articles": [
+    {
+      "category": "Newsletter",
+      "userType": "admin",
+      "fields": {
+        "title": "Newsletter",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit pretium ultrices. Ut id nisi non eros malesuada dapibus.",
+        "EmailDate": "2023-07-13",
+        "season": "Spring",
+        "price": 500.25,
+        "status": "Waiting for Approval",
+        "Number_of_email_receivers": "10",
+        "errorMessage": ""
+      }
+    },
+    {
+      "category": "Social Media",
+      "userType": "super admin",
+      "fields": {
+        "title": "Sample Article",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit pretium ultrices. Ut id nisi non eros malesuada dapibus.",
+        "postingDate": "2023-07-10",
+        "season": "Summer",
+        "price": 100.5,
+        "status": "Open",
+        "errorMessage": ""
+      }
+    },
+    {
+      "category": "Teaser",
+      "userType": "branduser",
+      "fields": {
+        "title": "Teaser",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit pretium ultrices. Ut id nisi non eros malesuada dapibus.",
+        "EmailDate": "2023-07-14",
+        "season": "Spring",
+        "price": 1000.25,
+        "status": "Waiting for Approval",
+        "Number_of_email_receivers": "7",
+        "errorMessage": ""
+      }
+    },
+    {
+      "category": "Video Wall",
+      "userType": "admin",
+      "fields": {
+        "title": "Video Wall",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit pretium ultrices. Ut id nisi non eros malesuada dapibus.",
+        "postingDate": "2023-07-10",
+        "season": "Summer",
+        "price": 100.5,
+        "status": "Open",
+        "errorMessage": ""
+      }
+    }
+  ]
+}

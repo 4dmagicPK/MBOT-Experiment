@@ -1,0 +1,170 @@
+    <div class="logo">
+      <img src="./assets/The_KaDeWe.jpg" alt="Company Logo">
+      <nav>
+        <ul>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">My Orders</a></li>
+          <li class="active"><a href="#">Users</a></li>
+        </ul>
+        <div class="icons">
+            <img src="./assets/heart-icon.png" alt="Favorites">
+            <img src="/assets/bag-icon.png" alt="Bag">
+          </div>
+      </nav>
+    
+  
+    <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <div class="form-container">
+        <h4 class="signup">Sign Up</h4>
+        <div class="initials">
+        <div class="form-field">
+          <label for="firstName">First Name<span>*</span></label>
+          <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required>
+          <div *ngIf="submitted && !firstName" class="error-message">First Name is required</div>
+        </div>
+        
+        <div class="form-field">
+          <label for="lastName">Last Name<span>*</span></label>
+          <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+          <div *ngIf="submitted && !lastName" class="error-message">Last Name is required</div>
+        </div>
+        
+        <div class="form-field">
+          <label for="username">Username<span>*</span></label>
+          <input type="text" id="username" name="username" [(ngModel)]="username" required>
+          <div *ngIf="submitted && !username" class="error-message">Username is required</div>
+        </div>
+        
+        <div class="form-field">
+          <label for="email">Email   <span> *</span></label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" required>
+          <div *ngIf="submitted && !email" class="error-message">Email is required</div>
+          <div *ngIf="submitted && email && !validateEmail(email)" class="error-message">Invalid Email</div>
+        </div>
+        
+        <div class="form-field">
+          <label for="brandName">Brand Name<span>*</span></label>
+          <input type="text" id="brandName" name="brandName" [(ngModel)]="brandName" required>
+          <div *ngIf="submitted && !brandName" class="error-message">Brand Name is required</div>
+        </div>
+        
+        <div class="form-field">
+          <label for="department">Department<span>*</span></label>
+          <input type="text" id="department" name="department" [(ngModel)]="department" required>
+          <div *ngIf="submitted && !department" class="error-message">Department is required</div>
+        </div>
+        
+        <div class="form-field">
+          <label for="mobileNumber">Mobile Number</label>
+          <input type="text" id="mobileNumber" name="mobileNumber" [(ngModel)]="mobileNumber">
+        </div>
+        
+        <div class="form-field">
+          <label for="telephoneNumber">Telephone Number<span>*</span></label>
+          <input type="text" id="telephoneNumber" name="telephoneNumber" [(ngModel)]="telephoneNumber" required>
+          <div *ngIf="submitted && !telephoneNumber" class="error-message">Telephone Number is required</div>
+        </div>
+    </div>
+        
+        <div class="form-field">
+          <div class="column">
+            <h5 class="del">Delivery Address</h5>
+            <div>
+              <label for="deliveryStreet">Street Address<span>*</span></label>
+              <input type="text" id="deliveryStreet" name="deliveryStreet" [(ngModel)]="deliveryStreet" required>
+              <div *ngIf="submitted && !deliveryStreet" class="error-message">Street Address is required</div>
+            </div>
+            <div>
+              <label for="deliveryHouseNr">House Nr<span>*</span></label>
+              <input type="text" id="deliveryHouseNr" name="deliveryHouseNr" [(ngModel)]="deliveryHouseNr" required>
+              <div *ngIf="submitted && !deliveryHouseNr" class="error-message">House Nr is required</div>
+            </div>
+            <div>
+              <label for="deliveryPostcode">Postcode<span>*</span></label>
+              <input type="text" id="deliveryPostcode" name="deliveryPostcode" [(ngModel)]="deliveryPostcode" required>
+              <div *ngIf="submitted && !deliveryPostcode" class="error-message">Postcode is required</div>
+            </div>
+            <div>
+              <label for="deliveryCity">City<span>*</span></label>
+              <input type="text" id="deliveryCity" name="deliveryCity" [(ngModel)]="deliveryCity" required>
+              <div *ngIf="submitted && !deliveryCity" class="error-message">City is required</div>
+            </div>
+            <div>
+              <label for="deliveryCountry">Country<span>*</span></label>
+              <input type="text" id="deliveryCountry" name="deliveryCountry" [(ngModel)]="deliveryCountry" required>
+              <div *ngIf="submitted && !deliveryCountry" class="error-message">Country is required</div>
+            </div>
+          </div>
+          
+          <div class="column">
+            <h5>Billing Address</h5>
+            <div>
+              <label for="billingStreet">Street Address<span>*</span></label>
+              <input type="text" id="billingStreet" name="billingStreet" [(ngModel)]="billingStreet" required>
+              <div *ngIf="submitted && !billingStreet" class="error-message">Street Address is required</div>
+            </div>
+            <div>
+              <label for="billingHouseNr">House Nr<span>*</span></label>
+              <input type="text" id="billingHouseNr" name="billingHouseNr" [(ngModel)]="billingHouseNr" required>
+              <div *ngIf="submitted && !billingHouseNr" class="error-message">House Nr is required</div>
+            </div>
+            <div>
+              <label for="billingPostcode">Postcode<span>*</span></label>
+              <input type="text" id="billingPostcode" name="billingPostcode" [(ngModel)]="billingPostcode" required>
+              <div *ngIf="submitted && !billingPostcode" class="error-message">Postcode is required</div>
+            </div>
+            <div>
+              <label for="billingCity">City<span>*</span></label>
+              <input type="text" id="billingCity" name="billingCity" [(ngModel)]="billingCity" required>
+              <div *ngIf="submitted && !billingCity" class="error-message">City is required</div>
+            </div>
+            <div>
+              <label for="billingCountry">Country<span>*</span></label>
+              <input type="text" id="billingCountry" name="billingCountry" [(ngModel)]="billingCountry" required>
+              <div *ngIf="submitted && !billingCountry" class="error-message">Country is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="billingDifferent" name="billingDifferent" [(ngModel)]="billingDifferent">
+          <label for="billingDifferent">Billing address is different from Delivery address</label>
+        </div>
+      
+      <h5>Contact Persons</h5>
+      <div class="form-field">
+        <div *ngFor="let contactPerson of contactPersons; let i = index" >
+          <!-- <h5>Contact Person {{ i + 1 }}</h5> -->
+          <div class="contact-person">
+            <div>
+              <label>Name</label>
+              <input type="text" name="contactPersonName{{ i }}" [(ngModel)]="contactPersons[i].name" required [disabled]="submitted">
+              <div class="error-message" *ngIf="submitted && i === 0 && !contactPersons[i].name">Name is required</div>
+            </div>
+            <div>
+              <label>Telefone</label>
+              <input type="text" name="contactPersonTelefone{{ i }}" [(ngModel)]="contactPersons[i].telefone" [disabled]="submitted">
+            </div>
+            <div>
+              <label>Mobile</label>
+              <input type="text" name="contactPersonMobile{{ i }}" [(ngModel)]="contactPersons[i].mobile" [disabled]="submitted">
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="email" name="contactPersonEmail{{ i }}" [(ngModel)]="contactPersons[i].email" [disabled]="submitted">
+              <div class="error-message" *ngIf="submitted && i === 0 && !contactPersons[i].email">Email is required</div>
+              <div class="error-message" *ngIf="submitted && i > 0 && contactPersons[i].email && !validateEmail(contactPersons[i].email)">Invalid email</div>
+            </div>
+          </div>
+          <button class="remove-contact" type="button" (click)="removeContactPerson(i)" [disabled]="submitted || i === 0 || contactPersons.length <= 1">-</button>
+        </div>
+      
+        <div *ngIf="contactPersons.length < 5">
+          <button class="add-contact" type="button" (click)="addContactPerson()" [disabled]="submitted">+</button>
+        </div>
+      
+      </div>
+      
+      <button class="submit" [disabled]="!isFormValid() || submitted">Submit</button>
+      </div>
+      </form>
+      

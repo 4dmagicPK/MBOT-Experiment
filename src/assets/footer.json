@@ -1,0 +1,52 @@
+{
+    "columns": [
+      {
+        "heading": "Contact Details",
+        "subElements": [
+          {
+            "label": "Phone",
+            "link": "tel:+1234567890"
+          },
+          {
+            "label": "Email",
+            "link": "mailto:info@example.com"
+          }
+        ]
+      },
+      {
+        "heading": "Follow Us",
+        "subElements": [
+          {
+            "label": "Facebook",
+            "link": "https://www.facebook.com/example"
+          },
+          {
+            "label": "Twitter",
+            "link": "https://www.twitter.com/example"
+          },
+          {
+            "label": "Instagram",
+            "link": "https://www.instagram.com/example"
+          }
+        ]
+      },
+      {
+        "heading": "Heading",
+        "subElements": [
+          {
+            "label": "Sub Element 1",
+            "link": "#"
+          },
+          {
+            "label": "Sub Element 2",
+            "link": "#"
+          },
+          {
+            "label": "Sub Element 3",
+            "link": "#"
+          }
+        ]
+      }
+    ]
+  }
+  

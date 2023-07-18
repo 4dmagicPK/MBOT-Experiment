@@ -1,0 +1,116 @@
+<div class="logo">
+    <img src="./assets/The_KaDeWe.jpg" alt="Company Logo">
+    <nav>
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">My Orders</a></li>
+        <li class="active"><a href="#">Users</a></li>
+      </ul>
+      <div class="icons">
+          <img src="./assets/heart-icon.png" alt="Favorites">
+          <img src="/assets/bag-icon.png" alt="Bag">
+        </div>
+    </nav>
+
+    <div *ngFor="let article of articles" class="article-container" [hidden]="!isContainerOpen(article)">
+    <div class="article-container" >
+      <div class="article-info">
+        <div *ngIf="article.category === 'Social Media'" class="article-fields social-media-container">
+            <span class="close-icon" (click)="toggleContainer(article)">&times;</span>
+            <div class="article-image">
+                <img src="./assets/images.jpg" alt="Sample Article">
+              </div>
+            <h2>{{ article.category }}</h2>
+          <p>{{ article.fields.content }}</p>
+          <p><strong>Date: </strong>{{ article.fields.postingDate }}</p>
+          <p><strong>Season: </strong>{{ article.fields.season }}</p>
+          <p><strong>Price: </strong>{{ article.fields.price }}</p>
+          <p><strong>Status: </strong>{{ article.fields.status }}</p>
+          <div class="button-container">
+            <div *ngIf="article.userType === 'admin'">
+              <button class="dashboard-button" routerLink="/admin-dashboard">Admin Dashboard</button>
+            </div>
+            <div *ngIf="article.userType === 'super admin'">
+              <button class="dashboard-button" routerLink="/super-admin-dashboard">Super Admin Dashboard</button>
+            </div>
+            <div *ngIf="article.userType === 'branduser'">
+              <button class="dashboard-button" routerLink="/user-dashboard">User Dashboard</button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="article.category === 'Teaser'" class="article-fields teaser-container">
+            <span class="close-icon" (click)="toggleContainer(article)">&times;</span>
+            <div class="article-image">
+                <img src="./assets/teaser.jpg" alt="Sample Article">
+              </div>
+            <h2>{{ article.category }}</h2>
+          <p>{{ article.fields.content }}</p>
+          <p><strong>Email Date: </strong>{{ article.fields.EmailDate }}</p>
+          <p><strong>Season: </strong>{{ article.fields.season }}</p>
+          <p><strong>Price: </strong>{{ article.fields.price }}</p>
+          <p><strong>Status: </strong>{{ article.fields.status }}</p>
+          <p><strong>Number of email receivers: </strong>{{ article.fields.Number_of_email_receivers }}</p>
+          <div class="button-container">
+            <div *ngIf="article.userType === 'admin'">
+              <button class="dashboard-button" routerLink="/admin-dashboard">Admin Dashboard</button>
+            </div>
+            <div *ngIf="article.userType === 'super admin'">
+              <button class="dashboard-button" routerLink="/super-admin-dashboard">Super Admin Dashboard</button>
+            </div>
+            <div *ngIf="article.userType === 'branduser'">
+              <button class="dashboard-button" routerLink="/user-dashboard">User Dashboard</button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="article.category === 'Video Wall'" class="article-fields video_wall-container">
+            <span class="close-icon" (click)="toggleContainer(article)">&times;</span>
+            <div class="article-image">
+                <img src="./assets/video_wall.jpg" alt="Sample Article">
+              </div>
+            <h2>{{ article.category }}</h2>
+          <p>{{ article.fields.content }}</p>
+          <p><strong>Date: </strong>{{ article.fields.postingDate }}</p>
+          <p><strong>Season: </strong>{{ article.fields.season }}</p>
+          <p><strong>Price: </strong>{{ article.fields.price }}</p>
+          <p><strong>Status: </strong>{{ article.fields.status }}</p>
+          <div class="button-container">
+            <div *ngIf="article.userType === 'admin'">
+              <button class="dashboard-button" routerLink="/admin-dashboard">Admin Dashboard</button>
+            </div>
+            <div *ngIf="article.userType=== 'super admin'">
+              <button class="dashboard-button" routerLink="/super-admin-dashboard">Super Admin Dashboard</button>
+            </div>
+            <div *ngIf="article.userType === 'branduser'">
+              <button class="dashboard-button" routerLink="/user-dashboard">User Dashboard</button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="article.category === 'Newsletter'" class="article-fields newsletter-container">
+            <span class="close-icon" (click)="toggleContainer(article)">&times;</span>
+            <div class="article-image">
+                <img src="./assets/newsletter.jpg" alt="Sample Article">
+              </div>
+            <h2>{{ article.category }}</h2>
+          <p>{{ article.fields.content }}</p>
+          <p><strong>Email Date: </strong>{{ article.fields.EmailDate }}</p>
+          <p><strong>Season: </strong>{{ article.fields.season }}</p>
+          <p><strong>Price: </strong>{{ article.fields.price }}</p>
+          <p><strong>Status: </strong>{{ article.fields.status }}</p>
+          <p><strong>Number of email receivers: </strong>{{ article.fields.Number_of_email_receivers }}</p>
+          <div class="button-container">
+            <div *ngIf="article.userType === 'admin'">
+              <button class="dashboard-button" routerLink="/admin-dashboard">Admin Dashboard</button>
+            </div>
+            <div *ngIf="article.userType === 'super admin'">
+              <button class="dashboard-button" routerLink="/super-admin-dashboard">Super Admin Dashboard</button>
+            </div>
+            <div *ngIf="article.userType === 'branduser'">
+              <button class="dashboard-button" routerLink="/user-dashboard">User Dashboard</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

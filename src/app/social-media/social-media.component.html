@@ -1,0 +1,47 @@
+<div class="logo">
+  <img src="./assets/The_KaDeWe.jpg" alt="Company Logo">
+  <nav>
+    <ul>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">My Orders</a></li>
+      <li class="active"><a href="#">Users</a></li>
+    </ul>
+    <div class="icons">
+        <img src="./assets/heart-icon.png" alt="Favorites">
+        <img src="/assets/bag-icon.png" alt="Bag">
+      </div>
+  </nav>
+
+<div class="social-media-container" id="container">
+<div class="article-image">
+  <img src="./assets/sample-article.png" alt="Sample Article">
+</div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div *ngIf="!errorMessage">
+    <div class="article-info">
+      <span class="close-icon" (click)="closeContainer()">&times;</span>
+      <div>
+      <h2>{{ article.title }}</h2>
+      <p>{{article.content}}</p>
+      <p><strong> Date: </strong>{{ article.postingDate }}</p>
+      <p><strong>Season: </strong>{{ article.season }}</p>
+      <p><strong>Price: </strong>{{ article.price }}</p>
+      <p><strong>Status:</strong> {{ article.status }}</p>
+      </div>
+  </div>
+  <div class="button-container">
+  <div *ngIf="userType === 'admin'">
+    <button class="dashboard-button" routerLink="/admin-dashboard">Admin Dashboard</button>
+  </div>
+    
+    <div *ngIf="userType === 'super admin'">
+      <button class="dashboard-button" routerLink="/super-admin-dashboard">Super Admin Dashboard</button>
+    </div>
+    
+    <div *ngIf="userType === 'branduser'">
+      <button class="dashboard-button" routerLink="/user-dashboard">User Dashboard</button>
+    </div>
+    </div>
+    </div>
+</div>
+

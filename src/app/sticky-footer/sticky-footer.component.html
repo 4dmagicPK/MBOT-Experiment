@@ -1,0 +1,13 @@
+<footer class="sticky-footer">
+    <div class="footer-columns">
+      <div class="footer-column" *ngFor="let column of footerData.columns">
+        <h2>{{ column.heading }}</h2>
+        <ul>
+          <li *ngFor="let item of column.subElements">
+            <a href="{{ item.link }}">{{ item.label }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  

@@ -1,0 +1,39 @@
+{
+    "userType": "super admin",
+    "status": "success",
+    "data": {
+      "teaser": {
+        "title": "Teaser",
+        "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit pretium ultrices. Ut id nisi non eros malesuada dapibus.",
+        "EmailDate": "2023-07-14",
+        "season": "Spring",
+        "price": 1000.25,
+        "status": "Waiting for Approval",
+        "Number_of_email_receivers":"7",
+        "errorMessage": ""
+      },
+      "dashboardView": {
+        "step3": {
+          "status": "Open",
+          "NewsletterTool": "Twitter"
+        },
+        "step4": {
+          "status": "Waiting for Approval",
+          "NewsletterTool": "Facebook"
+        },
+        "step5": {
+          "status": "Ready for Content",
+          "NewsletterTool": "Instagram"
+        },
+        "step6": {
+          "status": "Content Approval Waiting",
+          "NewsletterTool": "LinkedIn"
+        },
+        "step8": {
+          "status": "Invoiced",
+          "NewsletterTool": "Pinterest"
+        }
+      }
+    }
+  }
+  
