@@ -1,0 +1,59 @@
+<div class="logo">
+    <img src="./assets/The_KaDeWe.jpg" alt="Company Logo" />
+    <nav>
+      <ul>
+        <li>
+          <a
+            href="#"
+            class="shop"
+            (mouseenter)="showSecondNavbar1()"
+            (mouseleave)="hideSecondNavbar1()"
+          >
+            Shop
+          </a>
+        </li>
+        <li><a href="#">My Orders</a></li>
+        <li
+          (mouseenter)="showSecondNavbar2()"
+          (mouseleave)="hideSecondNavbar2()"
+        >
+        <a href="" class="users">
+          Users
+        </a>
+        </li>
+      </ul>
+  
+      <div class="icons">
+        <img src="./assets/heart-icon.png" alt="Favorites" />
+        <img src="/assets/bag-icon.png" alt="Bag" />
+      </div>
+    </nav>
+  </div>
+  
+  <!-- Second Navbar -->
+  <nav class="links1" (mouseenter)="showSecondNavbar1()" (mouseleave)="hideSecondNavbar1()" [hidden]="!showSecondNavbar1Flag">
+    <ul *ngFor="let shopItem of homeNavbarData">
+      <li>
+        <a href="#">{{ shopItem.shop.Kadewe }}</a>
+      </li>
+      <li><a href="#">{{ shopItem.shop.Alsterhaus }}</a></li>
+      <li><a href="#">{{ shopItem.shop.Oberpollinger }}</a></li>
+      <li><a href="#">{{ shopItem.shop.Carsh_Haus }}</a></li>
+      <li><a href="#">{{ shopItem.shop.Lamarr }}</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Third Navbar -->
+  <nav class="links2" (mouseenter)="showSecondNavbar2()" (mouseleave)="hideSecondNavbar2()" [hidden]="!showSecondNavbar2Flag">
+    <ul *ngFor="let shopItem of homeNavbarData">
+      <li>
+        <a href="#">{{ shopItem.users.Contact }}</a>
+      </li>
+      <li><a href="#">{{ shopItem.users.Change_Password }}</a></li>
+      <li><a href="#">{{ shopItem.users.Logout }}</a></li>
+    </ul>
+  </nav>
+
+
+  
+  

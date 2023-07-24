@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-
 // used to create fake backend
 import { fakeBackendProvider, JwtInterceptor, ErrorInterceptor } from './_helpers';
 
@@ -23,40 +22,45 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { TeaserComponent } from './teaser/teaser.component';
 import { VideoWallComponent } from './video-wall/video-wall.component';
 import { ArticleListComponentComponent } from './article-list-component/article-list-component.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SliderComponent } from './slider/slider.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        AppRoutingModule,
-        FormsModule
-    ],
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        AdminComponent,
-        LoginComponent,
-        superadminComponent,
-        SignupComponent,
-        SocialMediaComponent,
-        AdminDashboardComponent,
-        SuperAdminDashboardComponent,
-        UserDashboardComponent,
-        StickyFooterComponent,
-        NewsletterComponent,
-        TeaserComponent,
-        VideoWallComponent,
-        ArticleListComponentComponent
-    ],
-    providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    NgbModule,
+  ],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AdminComponent,
+    LoginComponent,
+    superadminComponent,
+    SignupComponent,
+    SocialMediaComponent,
+    AdminDashboardComponent,
+    SuperAdminDashboardComponent,
+    UserDashboardComponent,
+    StickyFooterComponent,
+    NewsletterComponent,
+    TeaserComponent,
+    VideoWallComponent,
+    ArticleListComponentComponent,
+    NavbarComponent,
+    SliderComponent,
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
-        // provider used to create fake backend
-        fakeBackendProvider
-    ],
-    bootstrap: [AppComponent]
+    // provider used to create fake backend
+    fakeBackendProvider,
+  ],
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}

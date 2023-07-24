@@ -1,4 +1,23 @@
-﻿<div class="card mt-4">
+﻿
+<app-navbar></app-navbar>
+<p *ngFor="let homeParagraphData of homeParagraphData">{{homeParagraphData.paragraph}}</p>
+
+<app-slider></app-slider>
+<app-sticky-footer></app-sticky-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card mt-4">
     <h4 class="card-header">Home</h4>
     <div class="card-body">
         <p>Your role is: <strong>{{user.role}}</strong>.</p>
@@ -9,4 +28,4 @@
             <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
         </ul>
     </div>
-</div>
+</div> -->

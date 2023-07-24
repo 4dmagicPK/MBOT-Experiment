@@ -1,0 +1,16 @@
+[
+    {
+        "shop":{
+            "Kadewe":"Kadewe",
+            "Alsterhaus":"Alsterhaus",
+            "Oberpollinger":"Oberpollinger",
+            "Carsh_Haus":"Carsh-Haus",
+            "Lamarr":"Lamarr"
+        },
+        "users":{
+            "Contact":"Contact",
+            "Change_Password":"Change Password",
+            "Logout":"Logout"
+        }
+    }
+]
