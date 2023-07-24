@@ -1,0 +1,25 @@
+<div class="slider-container" *ngFor="let slider of sliderData">
+	<ngb-carousel
+		#carousel
+		[interval]="2000"
+		[pauseOnHover]="pauseOnHover"
+		[pauseOnFocus]="pauseOnFocus"
+		(slide)="onSlide($event)"
+	>
+		<ng-template ngbSlide *ngFor="let img of images; index as i">
+			<div class="carousel-caption" >
+				<a href={{slider.slider[i].BtnLink}}>
+				<button type="button" class="btn btn-outline-light btn-lg"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1rem;">
+                {{slider.slider[i].BtnText}}</button>
+			</a>
+			</div>
+			<!-- <a href="https://www.google.fr/?q=Number+{{ i + 1 }}" target="_blank" rel="nofollow noopener noreferrer"> -->
+				<div class="picsum-img-wrapper">
+					<img src={{slider.slider[i].image}} alt={{slider.slider[i].title}} />
+				</div>
+			<!-- </a> -->
+		</ng-template>
+	</ngb-carousel>
+	
+</div>
