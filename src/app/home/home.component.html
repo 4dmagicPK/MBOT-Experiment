@@ -1,9 +1,10 @@
-﻿
-<!-- <app-admin></app-admin> -->
-
+﻿<div *ngIf="isAdmin">
+ <app-admin></app-admin>
+</div>
+<div *ngIf="isUser">
 <app-navbar></app-navbar>
+</div>
 <div></div>
-
 
 <p *ngFor="let homeParagraphData of homeParagraphData">{{homeParagraphData.paragraph}}</p>
 
