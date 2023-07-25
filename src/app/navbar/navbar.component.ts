@@ -1,38 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from './navbar.service';
-
+import { AuthenticationService } from '@app/_services';
+import { User, Role } from '@app/_models';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.less'],
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
   homeNavbarData: any;
-  showSecondNavbar1Flag = false;
-  showSecondNavbar2Flag = false;
+  user?:User|null; 
 
-  constructor(private navbarData: NavbarService) {
+  constructor(private navbarData: NavbarService,private authenticationService: AuthenticationService ) {
     navbarData.navbarDataMethod().subscribe((data) => {
       this.homeNavbarData = data;
     });
+    this.authenticationService.user.subscribe(x => this.user = x);
   }
 
   ngOnInit(): void {}
 
-  showSecondNavbar1() {
-    this.showSecondNavbar1Flag = true;
-    
-  }
-
-  hideSecondNavbar1() {
-    this.showSecondNavbar1Flag = false;
-  }
-
-  showSecondNavbar2() {
-    this.showSecondNavbar2Flag = true;
-  }
-
-  hideSecondNavbar2() {
-    this.showSecondNavbar2Flag = false;
-  }
+  logout() {
+    this.authenticationService.logout();
+}
+  
 }

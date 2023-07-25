@@ -22,7 +22,8 @@ const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { roles: [Role.Admin,Role.superadmin, Role.User] }
     },
     {
         path: 'superadmin',
@@ -45,6 +46,8 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent
     },
+   
+    
     { 
         path: 'social-media', 
         component: SocialMediaComponent, 

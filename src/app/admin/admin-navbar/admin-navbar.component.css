@@ -1,0 +1,122 @@
+.navbar {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+     position: sticky;
+       top: 0;
+       z-index: 5;
+       background-color: white;
+  }
+
+  .logo img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1em;
+  }
+
+  
+  
+  
+  nav{
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+
+  }
+  
+  nav ul .subnav .subnav-content ul li {
+    font-size: 16px;
+  }
+  
+  nav ul .subnav .subnav-content ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  nav ul .subnav .subnav-content ul li.active a {
+    font-weight: bold;
+  }
+  
+  .icons {
+    position: absolute;
+    top: 14%;
+    right: 300px;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 20px;
+  }
+  
+  .icons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    padding: 15px 8px;
+    text-decoration: none;
+  }
+  
+  .subnav {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 0px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    
+  }
+  
+  .subnav-content ul li a {
+    float: left;
+    color: black;
+    text-decoration: none;
+  }
+
+  .subnav-content a:hover {
+    color: black;
+  }
+
+  .subnav:hover .subnav-content {
+    display: block;
+  }
+
+  .subnav-content ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    background-color: white;
+  }
+  .subnavbtn:hover{
+    border-bottom: 3px solid black;
+   }
+
+   .shop-ul{
+    padding: 0;
+    gap: 0;
+   }
+  

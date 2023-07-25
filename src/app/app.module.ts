@@ -25,6 +25,8 @@ import { ArticleListComponentComponent } from './article-list-component/article-
 import { NavbarComponent } from './navbar/navbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContainerBoxComponent } from './container-box/container-box.component';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
 
 @NgModule({
   imports: [
@@ -53,6 +55,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ArticleListComponentComponent,
     NavbarComponent,
     SliderComponent,
+    ContainerBoxComponent,
+    AdminNavbarComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
