@@ -1,0 +1,74 @@
+<div class="navbar">
+    <div class="logo">
+      <img src="./assets/The_KaDeWe.jpg" alt="Company Logo" />
+      <nav>
+        <ul>
+            <a href="#dashboard">DASHBOARD</a>
+          <div class="subnav">
+            <button class="subnavbtn">
+              SHOP<i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content" *ngFor="let data of getDataOfAdminNavbar">
+              <ul class="shop-ul">
+                <li  class="shop-li">
+                  <a href="#">{{data.shop.kadewe}}</a>
+                </li>
+                <li>
+                  <a href="#">{{data.shop.alsterhaus}}</a>
+                </li>
+                <li>
+                  <a href="#">{{data.shop.oberpolinger}}</a>
+                </li>
+                <li>
+                  <a href="#">{{data.shop.carsh_Haus}}</a>
+                </li>
+                <li>
+                  <a href="#">{{data.shop.lamarr}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="subnav">
+            <button class="subnavbtn">
+                ADMINISTRATION<i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content" *ngFor="let data of getDataOfAdminNavbar">
+              <ul>
+                <li>
+                  <a href="#">{{data.administration.articleOverview}}</a>
+                </li>
+                <li>
+                  <a href="#">{{data.administration.brandOverview}}</a>
+                </li>
+                <li>
+                  <a href="#">{{data.administration.orderOverview}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="subnav">
+            <button class="subnavbtn">
+                USER<i class="fa fa-caret-down"></i>
+            </button>
+            <div class="subnav-content" *ngFor="let data of getDataOfAdminNavbar">
+              <ul>
+                <li>
+                  <a href="#">{{data.user.contact}}</a>
+                </li>
+                <li>
+                  <a href="#">{{data.user.addBrand}}</a>
+                </li>
+                <li>
+                  <a href="#">{{data.user.change_Password}}</a>
+                </li>
+                <li>
+                    <a href="#">{{data.user.logout}}</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  
