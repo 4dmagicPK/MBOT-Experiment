@@ -26,7 +26,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContainerBoxComponent } from './container-box/container-box.component';
-import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';
+import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';;
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.componen
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule,
+    NgbModule,,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
