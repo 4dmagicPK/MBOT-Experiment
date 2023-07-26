@@ -27,17 +27,25 @@ import { SliderComponent } from './slider/slider.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContainerBoxComponent } from './container-box/container-box.component';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';;
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 @NgModule({
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule,
+  imports:[
+    CommonModule,
     FormsModule,
-    NgbModule,,
-    BrowserAnimationsModule
+    RouterModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgbModule,
+  ],
+  exports:[
+    
+
   ],
   declarations: [
     AppComponent,
