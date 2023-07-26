@@ -26,7 +26,7 @@ export class TeaserComponent implements OnInit {
 
   ngOnInit(): void {
      // Simulating API call to fetch the teaser data
-     this.http.get('assets/teaser.json').subscribe(
+     this.http.get('assets/mockup/teaser.json').subscribe(
       (response: any) => {
         this.userType = response.userType;
         this.teaser = response.data.teaser;

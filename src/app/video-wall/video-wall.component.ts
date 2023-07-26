@@ -26,7 +26,7 @@ export class VideoWallComponent implements OnInit {
 
   ngOnInit(): void {
      // Simulating API call to fetch the video_wall data
-     this.http.get('assets/video_wall.json').subscribe(
+     this.http.get('assets/mockup/video_wall.json').subscribe(
       (response: any) => {
         this.userType = response.userType;
         this.video_wall = response.data.video_wall;

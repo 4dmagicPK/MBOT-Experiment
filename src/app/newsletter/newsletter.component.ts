@@ -25,7 +25,7 @@ export class NewsletterComponent implements OnInit {
 
   ngOnInit(): void {
      // Simulating API call to fetch the newsletter data
-     this.http.get('assets/newsletter.json').subscribe(
+     this.http.get('assets/mockup/newsletter.json').subscribe(
       (response: any) => {
         this.userType = response.userType;
         this.newsletter = response.data.newsletter;

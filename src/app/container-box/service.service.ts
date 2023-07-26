@@ -8,6 +8,6 @@ export class ServiceService {
 
   constructor(private http:HttpClient) { }
   getServices(){
-    return this.http.get('assets/home.json');
+    return this.http.get('assets/mockup/home.json');
   }
 }

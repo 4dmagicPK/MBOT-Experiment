@@ -9,6 +9,6 @@ export class SliderService {
   constructor(private http:HttpClient) { }
 
   sliderDataMethod(){
-    return this.http.get('assets/home.json');
+    return this.http.get('assets/mockup/home.json');
   }
 }
