@@ -31,6 +31,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   imports:[
     CommonModule,
@@ -42,6 +46,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
+    MatGridListModule,
+    FlexLayoutModule
   ],
   exports:[
     
