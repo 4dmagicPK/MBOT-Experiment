@@ -2,7 +2,7 @@
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
-
+import {RoleService} from './role.service';
 import { Role } from '@app/_models';
 //FIXME : This constant should be loaded from a assets/mockup-data loaded
 const users = [
@@ -11,8 +11,18 @@ const users = [
     { id: 2, username: 'user', password: 'user', firstName: 'Normal', lastName: 'User', role: Role.User }
 ];
 
+
+
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
+    private users: any[] = []; // Initialize users as an empty array
+
+    constructor(private _roleservice: RoleService) {
+        // Load data from the JSON file during constructor initialization
+        this._roleservice.getRoleData().subscribe((data) => {
+            // this.users = data;
+        });
+    }
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const { url, method, headers, body } = request;
 
@@ -109,6 +119,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
 export const fakeBackendProvider = {
     // use fake backend in place of Http service for backend-less development
+    
+    
+
     provide: HTTP_INTERCEPTORS,
     useClass: FakeBackendInterceptor,
     multi: true
