@@ -8,6 +8,6 @@ export class NavbarService{
   constructor(private http:HttpClient) { }
 
   navbarDataMethod(){
-   return this.http.get('assets/navbar.json');
+   return this.http.get('assets/mockup/navbar.json');
   }
 }

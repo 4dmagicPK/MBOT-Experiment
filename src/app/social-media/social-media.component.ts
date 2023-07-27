@@ -26,7 +26,7 @@ export class SocialMediaComponent implements OnInit {
 
   ngOnInit(): void {
      // Simulating API call to fetch the article data
-     this.http.get('assets/article-data.json').subscribe(
+     this.http.get('assets/mockup/article-data.json').subscribe(
       (response: any) => {
         this.userType = response.userType;
         this.article = response.data.article;

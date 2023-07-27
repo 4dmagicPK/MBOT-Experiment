@@ -15,7 +15,7 @@ export class ArticleListComponentComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get<any>('assets/articles_list.json').subscribe(data => {
+    this.http.get<any>('assets/mockup/articles_list.json').subscribe(data => {
       this.articles = data.articles.map((article: any) => ({
         ...article,
         isOpen: true

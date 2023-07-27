@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class RoleService {
 
   constructor(private http:HttpClient) { }
-  getServices(){
-    return this.http.get('assets/mockup/home.json');
+  getRoleData(){
+    return this.http.get('assets/role-data.json');
   }
 }

@@ -29,6 +29,9 @@ export class HomeComponent {
     get isAdmin() {
         return this.user?.role === Role.Admin;
     }
+    get isSuperAdmin() {
+        return this.user?.role === Role.superadmin;
+    }
     get isUser(){
         return this.user?.role === Role.User;
     }

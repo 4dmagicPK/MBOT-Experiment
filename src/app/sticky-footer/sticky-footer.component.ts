@@ -12,7 +12,7 @@ export class StickyFooterComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('assets/footer.json').subscribe((data: any) => {
+    this.http.get('assets/mockup/footer.json').subscribe((data: any) => {
       this.footerData = data;
     });
   }
