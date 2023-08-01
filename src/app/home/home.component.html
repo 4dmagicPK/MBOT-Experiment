@@ -1,16 +1,27 @@
 ﻿<div *ngIf="isAdmin || isSuperAdmin">
  <app-admin></app-admin>
 </div>
-<div *ngIf="isUser">
-<app-navbar></app-navbar>
+
+<div *ngIf="isUser;then ifBlock else elseBlock">
+
 </div>
-<div></div>
+<ng-template #ifBlock>
+    <app-navbar></app-navbar>
+    <div></div>
 
-<p *ngFor="let homeParagraphData of homeParagraphData">{{homeParagraphData.paragraph}}</p>
+    <p *ngFor="let homeParagraphData of homeParagraphData">{{homeParagraphData.paragraph}}</p>
+    
+    <app-slider></app-slider>
+    <app-container-box></app-container-box>
+    
+    <app-sticky-footer></app-sticky-footer>
+</ng-template>
 
-<app-slider></app-slider>
-<app-container-box></app-container-box>
-<app-sticky-footer></app-sticky-footer>
+<ng-template #elseBlock>
+    <app-sticky-footer></app-sticky-footer>
+</ng-template>
+
+
 
 
 
