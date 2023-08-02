@@ -35,6 +35,10 @@ import { filter, map } from 'rxjs/operators';
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+
+
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   imports:[
@@ -48,7 +52,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ReactiveFormsModule,
     NgbModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule
+      
   ],
   exports:[
     
@@ -74,6 +80,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SliderComponent,
     ContainerBoxComponent,
     AdminNavbarComponent,
+    ShoppingCartComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
