@@ -39,6 +39,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 import {MatCardModule} from '@angular/material/card';
+import {NgFor} from '@angular/common';
+
 
 @NgModule({
   imports:[
@@ -53,7 +55,8 @@ import {MatCardModule} from '@angular/material/card';
     NgbModule,
     MatGridListModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    NgFor
       
   ],
   exports:[
