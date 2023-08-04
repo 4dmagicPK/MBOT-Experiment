@@ -26,118 +26,58 @@
      </div>
     </ng-container>
 
-    <ng-container *ngIf="tile.text === 'Two' && tile.color === 'lightgreen'">
-        <div fxLayout="column" fxLayoutAlign="start start" fxFill>
+    <ng-container *ngIf="tile.text === 'Two'" >
+        <div fxLayout="column" fxLayoutAlign="start start" fxFill *ngFor="let shoppingData of shoppingData">
         
         
-         <mat-card class="example-card" fxLayout="row" fxLayoutAlign="start">
-          <img
-            mat-card-lg-image
-            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-            fxFlex="20"
-          />
-          <div
-            fxLayout="row"
-            fxLayoutGap="150px"
-            fxLayoutAlign="start start"
-            fxFlex="80"
-          >
-            <mat-card-title fxLayoutAlign="start center">
-              <div fxLayout="column" fxLayoutGap="0px">
-                <p>MAGAZIN</p>
-                <h3>Volle DIN A4 Seite</h3>
+          <mat-card #cardElement class="example-card" fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start start">
+              <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" fxFlex="20" />
+          
+              <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
+                <mat-card-title fxLayoutAlign="start center">
+                  <div fxLayout="column" fxLayoutGap="1px">
+                    <p>{{shoppingData.cart1.heading}}</p>
+                    <h3>{{shoppingData.cart1.paragraph}}</h3>
+                  </div>
+                </mat-card-title>
+                <mat-card-subtitle class="custom-margin" >
+                  <p>Status: {{shoppingData.cart1.status}}</p>
+                  <p>Ausgabe: {{shoppingData.cart1.Ausgabe}}</p>
+                  <p>Preis: {{shoppingData.cart1.Presis}}</p>
+                  <button>{{shoppingData.cart1.ButtonText}}</button>
+                  <p (click)="showDetails()" class="showDetails">{{showContent}}</p>
+                </mat-card-subtitle>
               </div>
-            </mat-card-title>
-            <mat-card-subtitle>
-              <p>Status: reserved until 08.06.2023</p>
-              <p>Ausgabe: 2 / 2023</p>
-              <p>Preis: 4500,00E</p>
-  
-              <button>Binding Book</button>
-            </mat-card-subtitle>
-          </div>
-        </mat-card> 
-        <mat-card class="example-card" fxLayout="row" fxLayoutAlign="start">
-          <img
-            mat-card-lg-image
-            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-            fxFlex="20"
-          />
-          <div
-            fxLayout="row"
-            fxLayoutGap="150px"
-            fxLayoutAlign="start start"
-            fxFlex="80"
-          >
-            <mat-card-title fxLayoutAlign="start center">
-              <div fxLayout="column" fxLayoutGap="0px">
-                <p>MAGAZIN</p>
-                <h3>Volle DIN A4 Seite</h3>
+            </div>
+          
+            <div class="details-container" *ngIf="showDetailsContainer">
+              <div class="border-up"></div>
+              <div fxLayout="row" fxLayoutGap="15px" fxLayoutWrap>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Description:</h3>
+                  <p>{{shoppingData.cart1.subCart.Description}}</p>
+                  <p>{{shoppingData.cart1.subCart.Bespielung}}</p>
+                  <h3>Resolution:</h3>
+                  <p>{{shoppingData.cart1.subCart.Resolution}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Format</h3>
+                  <p>{{shoppingData.cart1.subCart.Format}}</p>
+                  <h3>Conditions:</h3>
+                  <p>{{shoppingData.cart1.subCart.Conditions[0]}}</p>
+                  <p>{{shoppingData.cart1.subCart.Conditions[1]}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%" >
+                  <h3>Contact KaDeWe:</h3>
+                  <p>{{shoppingData.cart1.subCart.Contact[0]}}</p>
+                  <p>{{shoppingData.cart1.subCart.Contact[1]}}</p>
+                  <p>{{shoppingData.cart1.subCart.Contact[2]}}</p>
+                </div>
               </div>
-            </mat-card-title>
-            <mat-card-subtitle>
-              <p>Status: reserved until 08.06.2023</p>
-              <p>Ausgabe: 2 / 2023</p>
-              <p>Preis: 4500,00E</p>
-  
-              <button>Binding Book</button>
-            </mat-card-subtitle>
-          </div>
-        </mat-card> 
-        <mat-card class="example-card" fxLayout="row" fxLayoutAlign="start">
-          <img
-            mat-card-lg-image
-            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-            fxFlex="20"
-          />
-          <div
-            fxLayout="row"
-            fxLayoutGap="150px"
-            fxLayoutAlign="start start"
-            fxFlex="80"
-          >
-            <mat-card-title fxLayoutAlign="start center">
-              <div fxLayout="column" fxLayoutGap="0px">
-                <p>MAGAZIN</p>
-                <h3>Volle DIN A4 Seite</h3>
-              </div>
-            </mat-card-title>
-            <mat-card-subtitle>
-              <p>Status: reserved until 08.06.2023</p>
-              <p>Ausgabe: 2 / 2023</p>
-              <p>Preis: 4500,00E</p>
-  
-              <button>Binding Book</button>
-            </mat-card-subtitle>
-          </div>
-        </mat-card> 
-        <mat-card class="example-card" fxLayout="row" fxLayoutAlign="start">
-          <img
-            mat-card-lg-image
-            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-            fxFlex="20"
-          />
-          <div
-            fxLayout="row"
-            fxLayoutGap="150px"
-            fxLayoutAlign="start start"
-            fxFlex="80"
-          >
-            <mat-card-title fxLayoutAlign="start center">
-              <div fxLayout="column" fxLayoutGap="0px">
-                <p>MAGAZIN</p>
-                <h3>Volle DIN A4 Seite</h3>
-              </div>
-            </mat-card-title>
-            <mat-card-subtitle>
-              <p>Status: reserved until 08.06.2023</p>
-              <p>Ausgabe: 2 / 2023</p>
-              <p>Preis: 4500,00E</p>
-  
-              <button>Binding Book</button>
-            </mat-card-subtitle>
-          </div>
-        </mat-card> 
+            </div>
+          </mat-card>
+        
 
       </div>
       </ng-container>
@@ -154,8 +94,7 @@
   
   
 
-   
- 
+
   
   
   

@@ -1,0 +1,22 @@
+[
+  {
+    "cart1": 
+      {
+        "imageUrl": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "heading": "MAGAZIN",
+        "paragraph": "Volle DIN A4 Seite",
+        "status": "reserved until 08.06.2023",
+        "Ausgabe": "2 / 2023",
+        "Presis": "4500,00E",
+        "ButtonText": "Binding Book",
+        "subCart":{
+            "Description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis unde explicabo, nihil beatae quo.",
+            "Bespielung":"3D Bespielung moglich!",
+            "Resolution":"896 x 2048 Pixel",
+            "Format":"3.5 x 8 Meter",
+            "Conditions":["Mindestmietdauer: 1 Woche","Datenanlieferung: min 1 Woche vorcher"],
+            "Contact":["Vorname, Nachname","E-Mail","Telefonnummer"]
+        }
+      }
+  }
+]
