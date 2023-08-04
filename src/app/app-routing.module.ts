@@ -17,6 +17,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { TeaserComponent } from './teaser/teaser.component';
 import { VideoWallComponent } from './video-wall/video-wall.component';
 import { ArticleListComponentComponent } from './article-list-component/article-list-component.component';
+import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component'
 
 const routes: Routes = [
     {
@@ -96,6 +97,11 @@ const routes: Routes = [
         path: 'article-list-component', 
         component: ArticleListComponentComponent,
         data: { title: 'MBOT - Article-List'} 
+    },
+    { 
+        path: 'shopping-cart', 
+        component: ShoppingCartComponent,
+        data: { title: 'MBOT - Shopping-Cart'} 
     },
 
     // otherwise redirect to home

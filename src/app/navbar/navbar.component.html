@@ -27,7 +27,9 @@
             </ul>
           </div>
         </div>
-        <a  href="#contact">Contact</a>
+        <a href="#contact" *ngIf="currentPath !== '/shopping-cart'">Contact</a>
+        <a href="#myOrders" *ngIf="currentPath === '/shopping-cart'"><b>My Orders</b></a>
+        
         <div class="subnav">
           <button class="subnavbtn">
             Users<i class="fa fa-caret-down"></i>

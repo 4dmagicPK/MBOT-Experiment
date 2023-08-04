@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import {ShoppingCartService} from './shopping-cart.service'
 export interface Tile {
@@ -15,10 +15,15 @@ export interface Tile {
 
 export class ShoppingCartComponent {
   showDetailsContainer: boolean = false;
+  showDetailsContainer1: boolean = false;
+  showDetailsContainer2: boolean = false;
+
   showContent:string="show Details ᐯ";
+  showContent1:string="show Details ᐯ";
+  showContent2:string="show Details ᐯ";
+
   shoppingData:any;
 
-  @ViewChild('cardElement', { read: ElementRef }) cardElementRef!: ElementRef;
 
   tiles: Tile[] = [
     {text: 'One', cols: 1, rows: 2, color: 'lightblue'},
@@ -29,12 +34,14 @@ export class ShoppingCartComponent {
 showDetails() {
   this.showDetailsContainer = !this.showDetailsContainer;
   this.showContent=this.showDetailsContainer?"show Details ᐱ":"show Details ᐯ"
-
-  // if (this.showDetailsContainer) {
-  //   const cardWidth = this.cardElementRef.nativeElement.getBoundingClientRect().width;
-  //   const detailsContainer = document.querySelector('.details-container') as HTMLElement;
-  //   detailsContainer.style.width = `50px`;
-  // }
+}
+showDetails1() {
+  this.showDetailsContainer1 = !this.showDetailsContainer1;
+  this.showContent1=this.showDetailsContainer1?"show Details ᐱ":"show Details ᐯ"
+}
+showDetails2() {
+  this.showDetailsContainer2 = !this.showDetailsContainer2;
+  this.showContent2=this.showDetailsContainer2?"show Details ᐱ":"show Details ᐯ"
 }
 
 
@@ -54,7 +61,5 @@ showDetails() {
   updateTileCols() {
     this.tiles[1].cols = this.isSmallScreen ? 4 : 3;
     this.tiles[0].cols = this.isSmallScreen ? 4 : 1;
-
   }
-  
 }
