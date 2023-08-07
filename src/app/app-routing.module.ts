@@ -18,6 +18,7 @@ import { TeaserComponent } from './teaser/teaser.component';
 import { VideoWallComponent } from './video-wall/video-wall.component';
 import { ArticleListComponentComponent } from './article-list-component/article-list-component.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component'
+import {WaitingListComponent} from './waiting-list/waiting-list.component'
 
 const routes: Routes = [
     {
@@ -102,6 +103,11 @@ const routes: Routes = [
         path: 'shopping-cart', 
         component: ShoppingCartComponent,
         data: { title: 'MBOT - Shopping-Cart'} 
+    },
+    { 
+        path: 'waiting-list', 
+        component: WaitingListComponent,
+        data: { title: 'MBOT - Waiting-List'} 
     },
 
     // otherwise redirect to home

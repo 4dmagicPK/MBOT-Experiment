@@ -1,0 +1,14 @@
+<mat-grid-list cols="5" rowHeight="50px">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        >
+        <p *ngIf="tile.text==='Two'"> <input type="checkbox"> Please confirm our General Terms and Conditions </p>
+        <h2 *ngIf="tile.text==='Four'"><b>Total Amount:</b></h2>
+        <h2 *ngIf="tile.text==='Five'"><b>25.000,00E</b></h2>
+        <h2 *ngIf="tile.text==='Six'"><b> <button (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">{{btnText}}</button> </b></h2>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+  

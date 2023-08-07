@@ -1,26 +1,22 @@
 
 <app-navbar></app-navbar>
 
-
-
   <mat-grid-list cols="4" rowHeight="100px">
     <mat-grid-tile
       *ngFor="let tile of tiles"
       [colspan]="tile.cols"
       [rowspan]="tile.rows"
-     
     >
     
     <ng-container *ngIf="tile.text === 'One'" class="containerOfNavbar">
       <div fxLayout="row" fxLayoutAlign="center start" fxFill>
         <div fxLayout="column" fxLayoutGap="25px">
-          <p>My Orders > Shopping Cart</p>
+          <p>My Orders > Waiting list</p>
           <ul>
             <li><a href="">Orders</a></li>
-            <li><a routerLink="/shopping-cart"><b>Shopping cart</b></a></li>
-            <li><a href="/waiting-list">Waiting list</a></li>
+            <li><a routerLink="/shopping-cart">Shopping cart</a></li>
+            <li><a routerLink="/waiting-list"><b>Waiting list</b></a></li>
             <li><a href="">Cancellations</a></li>
-            
            </ul>
         </div>
      
@@ -29,7 +25,7 @@
 
     
     <ng-container *ngIf="tile.text === 'Two'" >
-        <div fxLayout="column" fxLayoutAlign="start start" fxFill *ngFor="let shoppingData of shoppingData">
+        <div fxLayout="column" fxLayoutAlign="start start" fxFill *ngFor="let waitingListData of waitingListData">
           
           <div class="content-container">
 
@@ -40,16 +36,16 @@
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 <mat-card-title fxLayoutAlign="start center">
                   <div fxLayout="column" fxLayoutGap="1px">
-                    <p>{{shoppingData.cart1.heading}}</p>
-                    <h3>{{shoppingData.cart1.paragraph}}</h3>
+                    <p>{{waitingListData.cart1.heading}}</p>
+                    <h3>{{waitingListData.cart1.paragraph}}</h3>
                   </div>
                 </mat-card-title>
                 <mat-card-subtitle class="custom-margin" >
-                  <p>Status: {{shoppingData.cart1.status}}</p>
-                  <p>Ausgabe: {{shoppingData.cart1.Ausgabe}}</p>
-                  <p>Preis: {{shoppingData.cart1.Presis}}</p>
-                  <button>{{shoppingData.cart1.ButtonText}}</button>
-                  <p (click)="showDetails()" class="showDetails">{{showContent}} </p>
+                  <p>Status: {{waitingListData.cart1.status}}</p>
+                  <p>Ausgabe: {{waitingListData.cart1.Ausgabe}}</p>
+                  <p>Preis: {{waitingListData.cart1.Presis}}</p>
+                  <button>{{waitingListData.cart1.ButtonText}}</button>
+                  <p (click)="showDetails()" class="showDetails">{{showContent}}</p>
                 </mat-card-subtitle>
               </div>
             </div>
@@ -59,23 +55,23 @@
               <div fxLayout="row" fxLayoutGap="15px" fxLayoutWrap>
                 <div class="detail-box" fxFlex="50%" >
                   <h3>Description:</h3>
-                  <p>{{shoppingData.cart1.subCart.Description}}</p>
-                  <p>{{shoppingData.cart1.subCart.Bespielung}}</p>
+                  <p>{{waitingListData.cart1.subCart.Description}}</p>
+                  <p>{{waitingListData.cart1.subCart.Bespielung}}</p>
                   <h3>Resolution:</h3>
-                  <p>{{shoppingData.cart1.subCart.Resolution}}</p>
+                  <p>{{waitingListData.cart1.subCart.Resolution}}</p>
                 </div>
                 <div class="detail-box" fxFlex="50%">
                   <h3>Format</h3>
-                  <p>{{shoppingData.cart1.subCart.Format}}</p>
+                  <p>{{waitingListData.cart1.subCart.Format}}</p>
                   <h3>Conditions:</h3>
-                  <p>{{shoppingData.cart1.subCart.Conditions[0]}}</p>
-                  <p>{{shoppingData.cart1.subCart.Conditions[1]}}</p>
+                  <p>{{waitingListData.cart1.subCart.Conditions[0]}}</p>
+                  <p>{{waitingListData.cart1.subCart.Conditions[1]}}</p>
                 </div>
                 <div class="detail-box" fxFlex="50%">
                   <h3>Contact KaDeWe:</h3>
-                  <p>{{shoppingData.cart1.subCart.Contact[0]}}</p>
-                  <p>{{shoppingData.cart1.subCart.Contact[1]}}</p>
-                  <p>{{shoppingData.cart1.subCart.Contact[2]}}</p>
+                  <p>{{waitingListData.cart1.subCart.Contact[0]}}</p>
+                  <p>{{waitingListData.cart1.subCart.Contact[1]}}</p>
+                  <p>{{waitingListData.cart1.subCart.Contact[2]}}</p>
                   <button class="cancelBtn">Cancel Order</button>
                 </div>
               </div>
@@ -89,15 +85,15 @@
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 <mat-card-title fxLayoutAlign="start center">
                   <div fxLayout="column" fxLayoutGap="1px">
-                    <p>{{shoppingData.cart2.heading}}</p>
-                    <h3>{{shoppingData.cart2.paragraph}}</h3>
+                    <p>{{waitingListData.cart2.heading}}</p>
+                    <h3>{{waitingListData.cart2.paragraph}}</h3>
                   </div>
                 </mat-card-title>
                 <mat-card-subtitle class="custom-margin" >
-                  <p>Status: {{shoppingData.cart2.status}}</p>
-                  <p>Zeitraum: {{shoppingData.cart2.Zeitraum}}</p>
-                  <p>Preis: {{shoppingData.cart2.Presis}}</p>
-                  <button>{{shoppingData.cart2.ButtonText}}</button>
+                  <p>Status: {{waitingListData.cart2.status}}</p>
+                  <p>Zeitraum: {{waitingListData.cart2.Zeitraum}}</p>
+                  <p>Preis: {{waitingListData.cart2.Presis}}</p>
+                  <button>{{waitingListData.cart2.ButtonText}}</button>
                   <p (click)="showDetails1()" class="showDetails">{{showContent1}}</p>
                 </mat-card-subtitle>
               </div>
@@ -108,23 +104,23 @@
               <div fxLayout="row" fxLayoutGap="15px" fxLayoutWrap>
                 <div class="detail-box" fxFlex="50%" >
                   <h3>Description:</h3>
-                  <p>{{shoppingData.cart2.subCart.Description}}</p>
-                  <p>{{shoppingData.cart2.subCart.Bespielung}}</p>
+                  <p>{{waitingListData.cart2.subCart.Description}}</p>
+                  <p>{{waitingListData.cart2.subCart.Bespielung}}</p>
                   <h3>Resolution:</h3>
-                  <p>{{shoppingData.cart2.subCart.Resolution}}</p>
+                  <p>{{waitingListData.cart2.subCart.Resolution}}</p>
                 </div>
                 <div class="detail-box" fxFlex="50%">
                   <h3>Format</h3>
-                  <p>{{shoppingData.cart2.subCart.Format}}</p>
+                  <p>{{waitingListData.cart2.subCart.Format}}</p>
                   <h3>Conditions:</h3>
-                  <p>{{shoppingData.cart2.subCart.Conditions[0]}}</p>
-                  <p>{{shoppingData.cart2.subCart.Conditions[1]}}</p>
+                  <p>{{waitingListData.cart2.subCart.Conditions[0]}}</p>
+                  <p>{{waitingListData.cart2.subCart.Conditions[1]}}</p>
                 </div>
                 <div class="detail-box" fxFlex="50%">
                   <h3>Contact KaDeWe:</h3>
-                  <p>{{shoppingData.cart2.subCart.Contact[0]}}</p>
-                  <p>{{shoppingData.cart2.subCart.Contact[1]}}</p>
-                  <p>{{shoppingData.cart2.subCart.Contact[2]}}</p>
+                  <p>{{waitingListData.cart2.subCart.Contact[0]}}</p>
+                  <p>{{waitingListData.cart2.subCart.Contact[1]}}</p>
+                  <p>{{waitingListData.cart2.subCart.Contact[2]}}</p>
                   <button class="cancelBtn">Cancel Order</button>
                 </div>
               </div>
@@ -138,15 +134,15 @@
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 <mat-card-title fxLayoutAlign="start center">
                   <div fxLayout="column" fxLayoutGap="1px">
-                    <p>{{shoppingData.cart3.heading}}</p>
-                    <h3>{{shoppingData.cart3.paragraph}}</h3>
+                    <p>{{waitingListData.cart3.heading}}</p>
+                    <h3>{{waitingListData.cart3.paragraph}}</h3>
                   </div>
                 </mat-card-title>
                 <mat-card-subtitle class="custom-margin" >
-                  <p>Status: {{shoppingData.cart3.status}}</p>
-                  <p>Zeitraum: {{shoppingData.cart3.Ausgabe}}</p>
-                  <p>Preis: {{shoppingData.cart3.Presis}}</p>
-                  <button>{{shoppingData.cart3.ButtonText}}</button>
+                  <p>Status: {{waitingListData.cart3.status}}</p>
+                  <p>Zeitraum: {{waitingListData.cart3.Ausgabe}}</p>
+                  <p>Preis: {{waitingListData.cart3.Presis}}</p>
+                  <button>{{waitingListData.cart3.ButtonText}}</button>
                   <p (click)="showDetails2()" class="showDetails">{{showContent2}}</p>
                 </mat-card-subtitle>
               </div>
@@ -157,38 +153,52 @@
               <div fxLayout="row" fxLayoutGap="15px" fxLayoutWrap>
                 <div class="detail-box" fxFlex="50%" >
                   <h3>Description:</h3>
-                  <p>{{shoppingData.cart3.subCart.Description}}</p>
-                  <p>{{shoppingData.cart3.subCart.Bespielung}}</p>
+                  <p>{{waitingListData.cart3.subCart.Description}}</p>
+                  <p>{{waitingListData.cart3.subCart.Bespielung}}</p>
                   <h3>Resolution:</h3>
-                  <p>{{shoppingData.cart3.subCart.Resolution}}</p>
+                  <p>{{waitingListData.cart3.subCart.Resolution}}</p>
                 </div>
                 <div class="detail-box" fxFlex="50%">
                   <h3>Format</h3>
-                  <p>{{shoppingData.cart3.subCart.Format}}</p>
+                  <p>{{waitingListData.cart3.subCart.Format}}</p>
                   <h3>Conditions:</h3>
-                  <p>{{shoppingData.cart3.subCart.Conditions[0]}}</p>
-                  <p>{{shoppingData.cart3.subCart.Conditions[1]}}</p>
+                  <p>{{waitingListData.cart3.subCart.Conditions[0]}}</p>
+                  <p>{{waitingListData.cart3.subCart.Conditions[1]}}</p>
                 </div>
                 <div class="detail-box" fxFlex="50%">
                   <h3>Contact KaDeWe:</h3>
-                  <p>{{shoppingData.cart3.subCart.Contact[0]}}</p>
-                  <p>{{shoppingData.cart3.subCart.Contact[1]}}</p>
-                  <p>{{shoppingData.cart3.subCart.Contact[2]}}</p>
+                  <p>{{waitingListData.cart3.subCart.Contact[0]}}</p>
+                  <p>{{waitingListData.cart3.subCart.Contact[1]}}</p>
+                  <p>{{waitingListData.cart3.subCart.Contact[2]}}</p>
                   <button class="cancelBtn">Cancel Order</button>
                 </div>
               </div>
             </div>
           </mat-card>
 
-        </div>  
+        </div>
+
+     
       </div>
       </ng-container>
+
+    
+
+      
 
     </mat-grid-tile>
   </mat-grid-list>
   
-  <app-calculation></app-calculation>  
+  
 
+  
+  
+
+
+  
+  
+  
+  
 
 
 <app-sticky-footer></app-sticky-footer>

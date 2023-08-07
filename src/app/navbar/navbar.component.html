@@ -27,8 +27,8 @@
             </ul>
           </div>
         </div>
-        <a href="#contact" *ngIf="currentPath !== '/shopping-cart'">Contact</a>
-        <a href="#myOrders" *ngIf="currentPath === '/shopping-cart'"><b>My Orders</b></a>
+        <a href="#contact" *ngIf="currentPath !== '/shopping-cart' && currentPath !== '/waiting-list'">Contact</a>
+        <a href="#myOrders" *ngIf="currentPath === '/shopping-cart' || currentPath === '/waiting-list'"><b>My Orders</b></a>
         
         <div class="subnav">
           <button class="subnavbtn">

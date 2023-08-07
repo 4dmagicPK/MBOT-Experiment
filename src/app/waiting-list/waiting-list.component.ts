@@ -1,7 +1,6 @@
 import { Component} from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import {ShoppingCartService} from './shopping-cart.service'
-import CloseIcon from '@mui/icons-material/Close';
+import {WaitingListService} from './waiting-list.service'
 export interface Tile {
   color: string;
   cols: number;
@@ -9,12 +8,12 @@ export interface Tile {
   text: string;
 }
 @Component({
-  selector: 'app-shopping-cart',
-  templateUrl: './shopping-cart.component.html',
-  styleUrls: ['./shopping-cart.component.less']
+  selector: 'app-waiting-list',
+  templateUrl: './waiting-list.component.html',
+  styleUrls: ['./waiting-list.component.less']
 })
 
-export class ShoppingCartComponent {
+export class WaitingListComponent {
   showDetailsContainer: boolean = false;
   showDetailsContainer1: boolean = false;
   showDetailsContainer2: boolean = false;
@@ -23,8 +22,7 @@ export class ShoppingCartComponent {
   showContent1:string="show Details ᐯ";
   showContent2:string="show Details ᐯ";
 
-  shoppingData:any;
-  closeIcon:any=CloseIcon
+  waitingListData:any;
 
 
   tiles: Tile[] = [
@@ -46,16 +44,15 @@ showDetails2() {
   this.showContent2=this.showDetailsContainer2?"show Details ᐱ":"show Details ᐯ"
 }
 
-
   isSmallScreen = false;
 
-  constructor(private breakpointObserver: BreakpointObserver,private shoppingCartService:ShoppingCartService) {
+  constructor(private breakpointObserver: BreakpointObserver,private waitingListService:WaitingListService) {
     this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.XSmall]).subscribe(result => {
       this.isSmallScreen = result.matches;
       this.updateTileCols();
-console.log(this.closeIcon)
-      shoppingCartService.getShoppingData().subscribe((data)=>{
-       this.shoppingData=data;
+
+      waitingListService.getWaitingListData().subscribe((data)=>{
+       this.waitingListData=data;
       })
     });
   }
@@ -65,3 +62,9 @@ console.log(this.closeIcon)
     this.tiles[0].cols = this.isSmallScreen ? 4 : 1;
   }
 }
+
+
+
+
+
+
