@@ -17,7 +17,7 @@
           <p>My Orders > Shopping Cart</p>
           <ul>
             <li><a href="">Orders</a></li>
-            <li><a href=""><b>Shopping cart</b></a></li>
+            <li><a routerLink="/shopping-cart"><b>Shopping cart</b></a></li>
             <li><a href="">Waiting list</a></li>
             <li><a href="">Cancellations</a></li>
            </ul>
@@ -26,9 +26,12 @@
      </div>
     </ng-container>
 
+    
     <ng-container *ngIf="tile.text === 'Two'" >
         <div fxLayout="column" fxLayoutAlign="start start" fxFill *ngFor="let shoppingData of shoppingData">
-        
+          
+          <div class="content-container">
+
           <mat-card  class="example-card" fxLayout="column">
             <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start start">
               <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" fxFlex="20" />
@@ -176,10 +179,13 @@
             </div>
           </mat-card>
 
+        </div>
+
+     
       </div>
       </ng-container>
 
-      
+    
 
       
 
