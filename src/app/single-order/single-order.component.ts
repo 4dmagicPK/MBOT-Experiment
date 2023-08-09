@@ -17,6 +17,30 @@ export interface Tile {
 export class SingleOrderComponent {
   singleOrderData:any;
 
+  mediaType: 'image' | null = null;
+  mediaUrl: string | null = null;
+  mediaName: string | null = null;
+
+  handleImageInput(event: any) {
+    const file = event.target.files[0];
+    
+    if (file && file.type.startsWith('image')) {
+      this.mediaType = 'image';
+      this.mediaUrl = URL.createObjectURL(file);
+      this.mediaName = file.name;
+    } else {
+      this.resetMedia();
+    }
+  }
+
+  private resetMedia() {
+    this.mediaType = null;
+    this.mediaUrl = null;
+    this.mediaName = null;
+  }
+
+
+
   tiles: Tile[] = [
     {text: 'One', cols: 1, rows: 2, color: 'lightblue'},
     {text: 'Two', cols: 3, rows: 7, color: 'lightgreen'},
