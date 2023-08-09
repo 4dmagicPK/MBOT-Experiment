@@ -43,6 +43,9 @@ import {NgFor} from '@angular/common';
 import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { MatIconModule } from '@angular/material/icon';
 import { CalculationComponent } from './calculation/calculation.component';
+import { SingleOrderComponent } from './single-order/single-order.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -60,8 +63,9 @@ import { CalculationComponent } from './calculation/calculation.component';
     FlexLayoutModule,
     MatCardModule,
     NgFor,
-    MatIconModule
-      
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   exports:[
     
@@ -90,6 +94,7 @@ import { CalculationComponent } from './calculation/calculation.component';
     ShoppingCartComponent,
     WaitingListComponent,
     CalculationComponent,
+    SingleOrderComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -19,6 +19,7 @@ import { VideoWallComponent } from './video-wall/video-wall.component';
 import { ArticleListComponentComponent } from './article-list-component/article-list-component.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component'
 import {WaitingListComponent} from './waiting-list/waiting-list.component'
+import { SingleOrderComponent } from './single-order/single-order.component';
 
 const routes: Routes = [
     {
@@ -108,6 +109,11 @@ const routes: Routes = [
         path: 'waiting-list', 
         component: WaitingListComponent,
         data: { title: 'MBOT - Waiting-List'} 
+    },
+    { 
+        path: 'single-order', 
+        component: SingleOrderComponent,
+        data: { title: 'MBOT - Single-Order'} 
     },
 
     // otherwise redirect to home

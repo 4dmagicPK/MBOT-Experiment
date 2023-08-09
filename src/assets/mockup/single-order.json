@@ -1,0 +1,30 @@
+[
+  {
+    "cart1": 
+      {
+        "Bestellnummer": "Bestellnummer: XXXXXXXXXXX",
+        "LED_WANd": "LED-WAND",
+        "GroBe": "GroBe Eckvitrine",
+        "Zeitraum": "Zeitraum: 23.06.2023 - 01.07.2023"
+        
+      },
+      "cart2": 
+      {
+        "Deadline": "Deadline for data upload",
+        "Deadline_Data": "16.07.2023",
+        "Express_Line": "Express Line Fee for failure to meet the deadline",
+        "Express_Line_Fee": "500E",
+        "Cancellation_Fee": "Cancellation Fee:",
+        "Eight_Weeks": "Up to 8 weeks before service provision: 20%",
+        "Four_Weeks": "Up to 4 weeks before service provision = min. lead time: 50%",
+        "Two_Weeks": "Up to 2 weeks before service provision: 80%"
+      },
+      "cart3": 
+      {
+        "Video_Eckvitrine": "Hier das neue Video fur die Eckvitrine"
+      },
+      "cart4":{
+        "Paragraph":"Das Video hat die falsche Auflosung bitte entsprechend dem Datenblatt anfertigen"
+      }
+  }
+]
