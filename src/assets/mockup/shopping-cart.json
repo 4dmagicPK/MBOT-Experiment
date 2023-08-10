@@ -2,7 +2,7 @@
   {
     "cart1": 
       {
-        "imageUrl": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "imageUrl": "https://images.pexels.com/photos/162031/dubai-tower-arab-khalifa-162031.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "heading": "MAGAZIN",
         "paragraph": "Volle DIN A4 Seite",
         "status": "reserved until 08.06.2023",
@@ -20,7 +20,7 @@
       },
       "cart2": 
       {
-        "imageUrl": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "imageUrl": "https://cdn.britannica.com/37/135437-050-A12461CC/Burj-Khalifa-world-Sheikh-Khalifah-ibn-Zayid-2010.jpg",
         "heading": "LED-WAND",
         "paragraph": "GroBe Eckvitrine",
         "status": "reserviert bis 01.06.2023",
@@ -38,7 +38,7 @@
       },
       "cart3": 
       {
-        "imageUrl": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "imageUrl": "https://cdn-imgix.headout.com/collection-card-image/158/image/09c609a1134ea7b034ee4cbd61bdbba5-158-dubai-002-dubai-burj-khalifa-01.jpg",
         "heading": "WEBSITE",
         "paragraph": "Promo Teaser XL",
         "status": "reserviert bis 08.06.2023",
