@@ -18,8 +18,8 @@
           <ul>
             <li><a routerLink="/single-order">Single Order</a></li>
             <li><a routerLink="/shopping-cart"><b>Shopping cart</b></a></li>
-            <li><a href="/waiting-list">Waiting list</a></li>
-            <li><a href="">Cancellations</a></li>
+            <li><a routerLink="/waiting-list">Waiting list</a></li>
+            <li><a routerLink="/cancellation-order">Cancellations</a></li>
             
            </ul>
         </div>
@@ -35,7 +35,7 @@
 
           <mat-card  class="example-card" fxLayout="column">
             <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start start">
-              <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" fxFlex="20" />
+              <img mat-card-lg-image src={{shoppingData.cart1.imageUrl}} fxFlex="20" />
           
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 <mat-card-title fxLayoutAlign="start center">
@@ -84,7 +84,7 @@
         
           <mat-card  class="example-card" fxLayout="column">
             <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="start start">
-              <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" fxFlex="20" />
+              <img mat-card-lg-image src={{shoppingData.cart2.imageUrl}} fxFlex="20" />
           
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 <mat-card-title fxLayoutAlign="start center">
@@ -133,7 +133,7 @@
 
           <mat-card  class="example-card" fxLayout="column">
             <div fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="start start">
-              <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" fxFlex="20" />
+              <img mat-card-lg-image src={{shoppingData.cart3.imageUrl}} fxFlex="20" />
           
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 <mat-card-title fxLayoutAlign="start center">

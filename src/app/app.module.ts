@@ -46,6 +46,7 @@ import { CalculationComponent } from './calculation/calculation.component';
 import { SingleOrderComponent } from './single-order/single-order.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CancellationOrderComponent } from './cancellation-order/cancellation-order.component';
 
 
 @NgModule({
@@ -95,6 +96,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     WaitingListComponent,
     CalculationComponent,
     SingleOrderComponent,
+    CancellationOrderComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

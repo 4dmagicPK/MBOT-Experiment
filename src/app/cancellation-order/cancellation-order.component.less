@@ -1,0 +1,126 @@
+.example-card {
+    max-width: 800px;
+    margin-bottom: 8px;
+  }
+
+  p{
+    color: black;
+  }
+  button{
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    width: 162px;
+    height: 32px;
+  }
+  button:hover{
+    background-color:white ;
+    color: black;
+    border: 2px solid white;
+  }
+  mat-card{
+    background-color: #f1f1f1;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  .containerOfNavbar{
+    margin-top: 50px;
+    background-color: red;
+  }
+
+  .showDetails{
+cursor: pointer;
+margin-left:200px ;
+  }
+
+  .showDetailsParagraph{
+    // margin-bottom: 100px;
+  }
+
+  .details-container {
+    width: 700px;
+    height: 300px;
+    padding: 10px;
+    background-color: #f1f1f1;
+  }
+  
+  .border-up {
+    border-top: 2px solid black;
+    margin-bottom: 10px;
+  }
+  
+  .detail-box {
+    padding: 10px;
+  }
+
+  .custom-margin {
+    margin-left: 80px;
+  }
+.cancelBtn{
+  position: relative;
+  top: 80px;
+  left: 50px;
+}
+
+img{
+  height: 21vh;
+}
+ 
+.content-container {
+  // max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  padding-bottom: 20px;
+} 
+
+  @media screen and (max-width:950px){
+    ul li{
+      display: inline-block;
+      
+      padding: 20px;
+    }
+    .custom-margin {
+      margin-left: 40px;
+    }
+    .showDetails{
+      cursor: pointer;
+      margin-top: 10px;
+      margin-left:180px ;
+        }
+        .details-container {
+          width: 600px;
+          height: 300px;
+          padding: 10px;
+        }
+  }
+
+  @media screen and (max-width:600px){
+    .showDetails{
+      cursor: pointer;
+      margin-top: 10px;
+      margin-left:90px ;
+        }
+        .details-container {
+          width: 500px;
+          height: 380px;
+          padding: 10px;
+        }
+        .cancelBtn{
+          position: relative;
+          top: 150px;
+          width: 100px;
+          margin-left: 20px;
+        }
+  }
