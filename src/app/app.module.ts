@@ -1,5 +1,5 @@
 ﻿import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule,Title } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -29,11 +29,24 @@ import { ContainerBoxComponent } from './container-box/container-box.component';
 import { AdminNavbarComponent } from './admin/admin-navbar/admin-navbar.component';;
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { filter, map } from 'rxjs/operators';
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+
+
+import {MatCardModule} from '@angular/material/card';
+import {NgFor} from '@angular/common';
+import { WaitingListComponent } from './waiting-list/waiting-list.component';
+import { MatIconModule } from '@angular/material/icon';
+import { CalculationComponent } from './calculation/calculation.component';
+import { SingleOrderComponent } from './single-order/single-order.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   imports:[
@@ -47,7 +60,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ReactiveFormsModule,
     NgbModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule,
+    NgFor,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   exports:[
     
@@ -73,6 +91,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SliderComponent,
     ContainerBoxComponent,
     AdminNavbarComponent,
+    ShoppingCartComponent,
+    WaitingListComponent,
+    CalculationComponent,
+    SingleOrderComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
@@ -83,4 +105,31 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private titleService: Title, private router: Router) {
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        map(() => this.getTitle())
+      )
+      .subscribe((title: string) => {
+        this.titleService.setTitle(title);
+      });
+}
+
+private getTitle(): string {
+  const title = 'MBOT - Home'; // Default title
+  const currentRoute = this.router.routerState.snapshot.root;
+  let child = currentRoute;
+  while (child.firstChild) {
+    child = child.firstChild;
+  }
+  if (child.data && child.data.title) {
+    return child.data.title;
+  }
+  return title;
+}
+}
+
+
+

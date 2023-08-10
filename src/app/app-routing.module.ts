@@ -17,34 +17,40 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { TeaserComponent } from './teaser/teaser.component';
 import { VideoWallComponent } from './video-wall/video-wall.component';
 import { ArticleListComponentComponent } from './article-list-component/article-list-component.component';
+import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component'
+import {WaitingListComponent} from './waiting-list/waiting-list.component'
+import { SingleOrderComponent } from './single-order/single-order.component';
 
 const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
         canActivate: [AuthGuard],
-        data: { roles: [Role.Admin,Role.superadmin, Role.User] }
+        data: { title: 'MBOT - Home', roles: [Role.Admin,Role.superadmin, Role.User] },
+        pathMatch: 'full'
     },
     {
         path: 'superadmin',
         component: superadminComponent,
         canActivate: [AuthGuard],
-        data: { roles: [Role.superadmin] }
+        data: { title: 'MBOT - Super Admin', roles: [Role.superadmin] }
     },
     {
         path: 'admin',
         component: AdminComponent,
         canActivate: [AuthGuard],
-        data: { roles: [Role.Admin] }
+        data: { title: 'MBOT - Admin', roles: [Role.Admin] }
     },
     {
         path: 'signup',
-        component: SignupComponent
+        component: SignupComponent,
+        data: { title: 'MBOT - Signup'}
     },
 
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        data: { title: 'MBOT - Login'}
     },
    
     
@@ -52,20 +58,23 @@ const routes: Routes = [
         path: 'social-media', 
         component: SocialMediaComponent, 
         canActivate: [AuthGuard],
-        data: { roles: [Role.Admin,Role.superadmin, Role.User] }
+        data: { title: 'MBOT - Social Media',roles: [Role.Admin,Role.superadmin, Role.User] }
     },
 
     { 
         path: 'admin-dashboard', 
-        component: AdminDashboardComponent 
+        component: AdminDashboardComponent,
+        data: { title: 'MBOT - Admin-Dashboard'} 
     },
     { 
         path: 'super-admin-dashboard',   //It leads to superadmin dashboard additional information 
-        component: SuperAdminDashboardComponent
+        component: SuperAdminDashboardComponent,
+        data: { title: 'MBOT - Super-Admin-Dashboard'} 
     },
     { 
         path: 'user-dashboard', 
-        component: UserDashboardComponent // It leads to additional information of user
+        component: UserDashboardComponent, // It leads to additional information of user
+        data: { title: 'MBOT - User-Dashboard'} 
     },
     {
         path:'sticky-footer',
@@ -73,19 +82,38 @@ const routes: Routes = [
     },
     {
         path:'newsletter',
-        component:NewsletterComponent
+        component:NewsletterComponent,
+        data: { title: 'MBOT - Newsletter'} 
     },
     {
         path:'teaser',
-        component:TeaserComponent
+        component:TeaserComponent,
+        data: { title: 'MBOT - Teaser'} 
     },
     {
         path:'video_wall',
-        component:VideoWallComponent
+        component:VideoWallComponent,
+        data: { title: 'MBOT - Video_wall'} 
     },
     { 
         path: 'article-list-component', 
-        component: ArticleListComponentComponent
+        component: ArticleListComponentComponent,
+        data: { title: 'MBOT - Article-List'} 
+    },
+    { 
+        path: 'shopping-cart', 
+        component: ShoppingCartComponent,
+        data: { title: 'MBOT - Shopping-Cart'} 
+    },
+    { 
+        path: 'waiting-list', 
+        component: WaitingListComponent,
+        data: { title: 'MBOT - Waiting-List'} 
+    },
+    { 
+        path: 'single-order', 
+        component: SingleOrderComponent,
+        data: { title: 'MBOT - Single-Order'} 
     },
 
     // otherwise redirect to home

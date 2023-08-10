@@ -1,0 +1,119 @@
+<app-navbar></app-navbar>
+
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+  >
+    <ng-container *ngIf="tile.text === 'One'" class="containerOfNavbar">
+      <div fxLayout="row" fxLayoutAlign="center start" fxFill>
+        <div fxLayout="column" fxLayoutGap="25px">
+          <p>My Orders > Single Order > Order number: XXXXX</p>
+          <ul>
+            <li>
+              <a routerLink="/single-order"><b>Single Order</b></a>
+            </li>
+            <li><a routerLink="/shopping-cart">Shopping cart</a></li>
+            <li><a href="/waiting-list">Waiting list</a></li>
+            <li><a href="">Cancellations</a></li>
+          </ul>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="tile.text === 'Two'">
+      <div fxLayout="column" fxLayoutAlign="start start" fxFill>
+        <div class="content-container">
+          <div
+            class="container"
+            *ngFor="let singleOrderData of singleOrderData"
+          >
+            <div class="content">
+              <p>{{ singleOrderData.cart1.Bestellnummer }}</p>
+              <p>{{ singleOrderData.cart1.LED_WANd }}</p>
+              <p>{{ singleOrderData.cart1.GroBe }}</p>
+              <p>{{ singleOrderData.cart1.Zeitraum }}</p>
+            </div>
+            <div class="content" id="content2">
+              <div class="dataUpload">
+                <p>{{ singleOrderData.cart2.Deadline }}</p>
+                <p class="changeColor">
+                  {{ singleOrderData.cart2.Deadline_Data }}
+                </p>
+                <p>{{ singleOrderData.cart2.Express_Line }}</p>
+                <p class="changeColor">
+                  {{ singleOrderData.cart2.Express_Line_Fee }}
+                </p>
+              </div>
+              <div class="cancellation">
+                <p>{{ singleOrderData.cart2.Cancellation_Fee }}</p>
+                <p class="changeColor">
+                  {{ singleOrderData.cart2.Eight_Weeks }}
+                </p>
+                <p class="changeColor">
+                  {{ singleOrderData.cart2.Four_Weeks }}
+                </p>
+                <p class="changeColor">{{ singleOrderData.cart2.Two_Weeks }}</p>
+              </div>
+            </div>
+
+            <div class="fileInput">
+              <input type="file" id="fileInput" accept="image/*" (change)="handleImageInput($event)" style="display: none" />
+              <label for="fileInput">click here</label>
+              <p>to upload an image</p>
+            </div>
+
+            <div class="inner-container">
+              <div class="inner-content" id="first">
+                <div class="thumb">
+                  <div class="firstIcon">
+                    <div class="like-icon">
+                      <mat-icon>thumb_up</mat-icon>
+                    </div>
+                  </div>
+
+                  <div class="secondIcon">
+                    <div class="dislike-icon">
+                      <mat-icon>thumb_down</mat-icon>
+                    </div>
+                  </div>
+                </div>
+                <div class="download">
+                  <i class="fa-solid fa-download fa-3x"></i>
+                </div>
+                <!-- <div class="download">
+                    <mat-icon class="mat-icon-xxl">download</mat-icon>
+                     <mat-icon class="mat-icon">vertical_align_bottom</mat-icon>
+                     <mat-icon>arrow_downward</mat-icon>
+                  </div> -->
+
+                  <div class="picture" *ngIf="mediaType === 'image'">
+                    <img [src]="mediaUrl" alt="Uploaded Image" />
+                    <p>{{ mediaName }}</p>
+                  </div>
+                  
+                  
+              </div>
+              <div class="inner-content" id="second">
+                {{ singleOrderData.cart3.Video_Eckvitrine }}
+              </div>
+              <div class="inner-content" id="third">
+                {{ singleOrderData.cart4.Paragraph }}
+              </div>
+            </div>
+          </div>
+
+          <div class="comment">
+            <form class="example-form">
+              <input type="text" placeholder="Kammentar" />
+            </form>
+            <button>Comment</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<app-sticky-footer></app-sticky-footer>

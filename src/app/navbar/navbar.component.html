@@ -27,11 +27,18 @@
             </ul>
           </div>
         </div>
-        <a href="#contact">Contact</a>
+        <a href="#contact" *ngIf="currentPath !== '/shopping-cart' && currentPath !== '/waiting-list' && currentPath !== '/single-order' ">Contact</a>
+        <a href="#myOrders" *ngIf="currentPath === '/shopping-cart' || currentPath === '/waiting-list'"><b>My Orders</b></a>
+        <a href="#myOrders" *ngIf="currentPath === '/single-order'">My Orders</a>
+
+        
         <div class="subnav">
-          <button class="subnavbtn">
-            Users<i class="fa fa-caret-down"></i>
+          <button class="subnavbtn" *ngIf="currentPath === '/single-order'">
+           <b>Users</b><i class="fa fa-caret-down"></i>
           </button>
+          <button class="subnavbtn" *ngIf="currentPath !== '/single-order'">
+            Users<i class="fa fa-caret-down"></i>
+           </button>
           <div class="subnav-content" *ngFor="let shopItem of homeNavbarData">
             <ul>
               <li>

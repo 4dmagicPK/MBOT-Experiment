@@ -1,0 +1,58 @@
+[
+  {
+    "cart1": 
+      {
+        "imageUrl": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "heading": "MAGAZIN",
+        "paragraph": "Volle DIN A4 Seite",
+        "status": "reserved until 08.06.2023",
+        "Ausgabe": "2 / 2023",
+        "Presis": "4500,00E",
+        "ButtonText": "Binding Book",
+        "subCart":{
+            "Description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis unde explicabo, nihil beatae quo.",
+            "Bespielung":"3D Bespielung moglich!",
+            "Resolution":"896 x 2048 Pixel",
+            "Format":"3.5 x 8 Meter",
+            "Conditions":["Mindestmietdauer: 1 Woche","Datenanlieferung: min 1 Woche vorcher"],
+            "Contact":["Vorname, Nachname","E-Mail","Telefonnummer"]
+        }
+      },
+      "cart2": 
+      {
+        "imageUrl": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "heading": "LED-WAND",
+        "paragraph": "GroBe Eckvitrine",
+        "status": "reserviert bis 01.06.2023",
+        "Zeitraum": "23.06.2023 - 01.07.2023",
+        "Presis": "18000,00E",
+        "ButtonText": "VERBINDLICH BUCHEN",
+        "subCart":{
+            "Description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis unde explicabo, nihil beatae quo.",
+            "Bespielung":"3D Bespielung moglich!",
+            "Resolution":"896 x 2048 Pixel",
+            "Format":"3.5 x 8 Meter",
+            "Conditions":["Mindestmietdauer: 1 Woche","Datenanlieferung: min 1 Woche vorcher"],
+            "Contact":["Vorname, Nachname","E-Mail","Telefonnummer"]
+        }
+      },
+      "cart3": 
+      {
+        "imageUrl": "https://material.angular.io/assets/img/examples/shiba2.jpg",
+        "heading": "WEBSITE",
+        "paragraph": "Promo Teaser XL",
+        "status": "reserviert bis 08.06.2023",
+        "Zeitraum": "23.06.2023 - 01.07.2023",
+        "Presis": "2.500,00E",
+        "ButtonText": "VERBINDLICH BUCHEN",
+        "subCart":{
+            "Description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis unde explicabo, nihil beatae quo.",
+            "Bespielung":"3D Bespielung moglich!",
+            "Resolution":"896 x 2048 Pixel",
+            "Format":"3.5 x 8 Meter",
+            "Conditions":["Mindestmietdauer: 1 Woche","Datenanlieferung: min 1 Woche vorcher"],
+            "Contact":["Vorname, Nachname","E-Mail","Telefonnummer"]
+        }
+      }
+  }
+]
