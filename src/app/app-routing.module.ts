@@ -21,6 +21,7 @@ import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component'
 import {WaitingListComponent} from './waiting-list/waiting-list.component'
 import { SingleOrderComponent } from './single-order/single-order.component';
 import { CancellationOrderComponent } from './cancellation-order/cancellation-order.component';
+import { AllOrdersComponent } from './all-orders/all-orders.component';
 
 const routes: Routes = [
     {
@@ -120,6 +121,11 @@ const routes: Routes = [
         path: 'cancellation-order', 
         component: CancellationOrderComponent,
         data: { title: 'MBOT - Cancellation-order'} 
+    },
+    { 
+        path: 'all-orders', 
+        component: AllOrdersComponent,
+        data: { title: 'MBOT - All-Orders'} 
     },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

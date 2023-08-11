@@ -27,9 +27,9 @@
             </ul>
           </div>
         </div>
-        <a href="#contact" *ngIf="currentPath !== '/shopping-cart' && currentPath !== '/waiting-list' && currentPath !== '/single-order' && currentPath !== '/cancellation-order'">Contact</a>
-        <a href="#myOrders" *ngIf="currentPath === '/shopping-cart' || currentPath === '/waiting-list' || currentPath === '/cancellation-order'"><b>My Orders</b></a>
-        <a href="#myOrders" *ngIf="currentPath === '/single-order'">My Orders</a>
+        <a href="#contact" *ngIf="currentPath !== '/shopping-cart' && currentPath !== '/waiting-list' && currentPath !== '/single-order' && currentPath !== '/cancellation-order' && currentPath !== '/all-orders'">Contact</a>
+        <a routerLink="/all-orders" *ngIf="currentPath === '/shopping-cart' || currentPath === '/waiting-list' || currentPath === '/cancellation-order' || currentPath === '/all-orders'"><b>My Orders</b></a>
+        <a routerLink="/all-orders" *ngIf="currentPath === '/single-order'">My Orders</a>
 
         
         <div class="subnav">
