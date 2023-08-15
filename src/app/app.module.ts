@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
-import { fakeBackendProvider, JwtInterceptor, ErrorInterceptor } from './_helpers';
+// import { fakeBackendProvider, JwtInterceptor, ErrorInterceptor } from './_helpers';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -115,11 +115,11 @@ import {StepperOrientation} from '@angular/material/stepper';
     AllOrdersComponent,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
-    // provider used to create fake backend
-    fakeBackendProvider,
+    // // provider used to create fake backend
+    // fakeBackendProvider,
   ],
   bootstrap: [AppComponent],
 })
