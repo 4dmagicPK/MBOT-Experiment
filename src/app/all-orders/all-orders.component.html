@@ -37,9 +37,9 @@
           <mat-card  class="example-card" fxLayout="column">
               <p class="order-number">Order number: XXXXXXXXX</p>
               
-            <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start start">
+            <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="start start">
               
-              <img mat-card-lg-image src={{allOrdersData.cart1.imageUrl}} fxFlex="20" />
+              <img mat-card-lg-image src={{allOrdersData.cart1.imageUrl}} fxFlex="15" />
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 
                 <mat-card-title fxLayoutAlign="start center">
@@ -170,8 +170,8 @@
 
             <div class="secondOrder">
 
-            <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start start">
-              <img mat-card-lg-image src={{allOrdersData.cart12.imageUrl}} fxFlex="20" />
+            <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="start start">
+              <img mat-card-lg-image src={{allOrdersData.cart12.imageUrl}} fxFlex="15" />
           
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 <mat-card-title fxLayoutAlign="start center">
@@ -181,9 +181,23 @@
                   </div>
                 </mat-card-title>
                 <mat-card-subtitle class="custom-margin" >
-                  <p>Status: {{allOrdersData.cart12.status}}</p>
-                  <p>Ausgabe: {{allOrdersData.cart12.Ausgabe}}</p>
-                  <p>Preis: {{allOrdersData.cart12.Presis}}</p>
+
+
+                  <mat-stepper
+                  class="example-stepper" labelPosition="bottom"
+                  [orientation]="(stepperOrientation | async)!" >
+                  <mat-step class="form-step" [stepControl]="firstFormGroup" label="Order received" >
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup" label="Waiting for upload">
+                  </mat-step>
+                  <mat-step [stepControl]="thirdFormGroup" label="Waiting for approval">
+                  </mat-step>
+                  <mat-step [stepControl]="fourthFormGroup" label="Order completed">
+                  </mat-step>
+                </mat-stepper>
+
+
+                  <p>Zeitraum: {{allOrdersData.cart12.zeitraum}}</p>
                   <button>{{allOrdersData.cart12.ButtonText1}}</button>
                   <button>{{allOrdersData.cart12.ButtonText2}}</button>
                   <p (click)="showDetails0()" class="showDetails">{{showContent0}}</p>
@@ -225,7 +239,7 @@
           <mat-card  class="example-card" fxLayout="column">
             <p>Order number: XXXXXXXXX</p>
             <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="start start">
-              <img mat-card-lg-image src={{allOrdersData.cart2.imageUrl}} fxFlex="20" />
+              <img mat-card-lg-image src={{allOrdersData.cart2.imageUrl}} fxFlex="15" />
           
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 <mat-card-title fxLayoutAlign="start center">
@@ -235,9 +249,19 @@
                   </div>
                 </mat-card-title>
                 <mat-card-subtitle class="custom-margin" >
-                  <p>Status: {{allOrdersData.cart2.status}}</p>
-                  <p>Zeitraum: {{allOrdersData.cart2.Zeitraum}}</p>
-                  <p>Preis: {{allOrdersData.cart2.Presis}}</p>
+                  <mat-stepper
+                  class="example-stepper" labelPosition="bottom"
+                  [orientation]="(stepperOrientation | async)!" >
+                  <mat-step class="form-step" [stepControl]="firstFormGroup" label="Order received" >
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup" label="Waiting for upload">
+                  </mat-step>
+                  <mat-step [stepControl]="thirdFormGroup" label="Waiting for approval">
+                  </mat-step>
+                  <mat-step [stepControl]="fourthFormGroup" label="Order completed">
+                  </mat-step>
+                </mat-stepper>                 
+                  <p>Zeitraum: {{allOrdersData.cart2.zeitraum}}</p>
                   <button>{{allOrdersData.cart2.ButtonText1}}</button>
                   <button>{{allOrdersData.cart2.ButtonText2}}</button>
                   <p (click)="showDetails1()" class="showDetails">{{showContent1}}</p>
@@ -274,9 +298,10 @@
           </mat-card>
 
           <mat-card  class="example-card" fxLayout="column">
-            <div fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="start start">
-              <img mat-card-lg-image src={{allOrdersData.cart3.imageUrl}} fxFlex="20" />
-          
+            <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="start start" >
+              <!-- <div class="image-container"> -->
+              <img mat-card-lg-image src={{allOrdersData.cart3.imageUrl}} fxFlex="15" />
+            <!-- </div> -->
               <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
                 <mat-card-title fxLayoutAlign="start center">
                   <div fxLayout="column" fxLayoutGap="1px">
@@ -285,9 +310,19 @@
                   </div>
                 </mat-card-title>
                 <mat-card-subtitle class="custom-margin" >
-                  <p>Status: {{allOrdersData.cart3.status}}</p>
-                  <p>Zeitraum: {{allOrdersData.cart3.Ausgabe}}</p>
-                  <p>Preis: {{allOrdersData.cart3.Presis}}</p>
+                  <mat-stepper
+                  class="example-stepper" labelPosition="bottom"
+                  [orientation]="(stepperOrientation | async)!" >
+                  <mat-step class="form-step" [stepControl]="firstFormGroup" label="Order received" >
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup" label="Waiting for upload">
+                  </mat-step>
+                  <mat-step [stepControl]="thirdFormGroup" label="Waiting for approval">
+                  </mat-step>
+                  <mat-step [stepControl]="fourthFormGroup" label="Order completed">
+                  </mat-step>
+                </mat-stepper>
+                  <p>Zeitraum: {{allOrdersData.cart3.zeitraum}}</p>
                   <button>{{allOrdersData.cart3.ButtonText1}}</button>
                   <button>{{allOrdersData.cart3.ButtonText2}}</button>
                   <p (click)="showDetails2()" class="showDetails">{{showContent2}}</p>

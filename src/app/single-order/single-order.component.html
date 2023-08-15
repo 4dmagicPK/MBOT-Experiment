@@ -1,11 +1,15 @@
 <app-navbar></app-navbar>
 
-<mat-grid-list cols="4" rowHeight="100px">
+
+
+<mat-grid-list class="main-container" cols="4" rowHeight="100px">
+  
   <mat-grid-tile
     *ngFor="let tile of tiles"
     [colspan]="tile.cols"
     [rowspan]="tile.rows"
   >
+  
     <ng-container *ngIf="tile.text === 'One'" class="containerOfNavbar">
       <div fxLayout="row" fxLayoutAlign="center start" fxFill>
         <div fxLayout="column" fxLayoutGap="25px">
@@ -21,8 +25,10 @@
         </div>
       </div>
     </ng-container>
+    
 
     <ng-container *ngIf="tile.text === 'Two'">
+      
       <div fxLayout="column" fxLayoutAlign="start start" fxFill>
         <div class="content-container">
           <div
@@ -111,9 +117,11 @@
             <button>Comment</button>
           </div>
         </div>
+      
       </div>
     </ng-container>
   </mat-grid-tile>
 </mat-grid-list>
+
 
 <app-sticky-footer></app-sticky-footer>
