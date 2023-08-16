@@ -56,6 +56,8 @@ import {NgSwitch, NgSwitchCase, AsyncPipe} from '@angular/common';
 
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {StepperOrientation} from '@angular/material/stepper';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ContactDetailsComponent } from './contact-details/contact-details.component';
 
 @NgModule({
   imports:[
@@ -113,6 +115,8 @@ import {StepperOrientation} from '@angular/material/stepper';
     SingleOrderComponent,
     CancellationOrderComponent,
     AllOrdersComponent,
+    ChangePasswordComponent,
+    ContactDetailsComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
