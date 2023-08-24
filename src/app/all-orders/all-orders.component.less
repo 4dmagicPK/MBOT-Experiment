@@ -1,6 +1,9 @@
 .example-card {
-    // max-width: 800px;
-    margin-bottom: 8px;
+    width: 1100px;
+    // height: 50vh;
+    margin-bottom: 14px;
+    // width: 900px;
+    // background-color: aqua;
   }
 
   p{
@@ -10,8 +13,10 @@
     background-color: black;
     color: white;
     border: 2px solid black;
-    width: 162px;
+    width: 10vw;
     height: 32px;
+    margin-right: 20px;
+    margin-top: 30px;
   }
   button:hover{
     background-color:white ;
@@ -20,6 +25,9 @@
   }
   mat-card{
     background-color: #f1f1f1;
+  }
+  mat-grid-list{
+    margin-bottom: 40px;
   }
   ul {
     list-style-type: none;
@@ -41,14 +49,19 @@
     background-color: red;
   }
 
-  .showDetails{
+  .showDetails,.showDetailss{
 cursor: pointer;
-margin-left:390px ;
+// background-color: red;
+margin-top: 35px;
+float: right;
+clear: left;
   }
 
+ 
+
   .details-container {
-    width: 58vw;
-    height: 300px;
+    width: 71vw;
+    height: 42vh;
     padding: 10px;
     background-color: #f1f1f1;
   }
@@ -68,18 +81,61 @@ margin-left:390px ;
 .cancelBtn{
   position: relative;
   top: 80px;
-  left: 50px;
+  left: 190px;
+  // float: left;
 }
-
+.image-container{
+  height: 120vh;
+  width: 100px;
+  background-color: red;
+}
+.main-container{
+  // background-color: red;
+  // height: 30vh;
+}
 img{
-  height: 21vh;
+  max-width: 10vw;
+  max-height: 40vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
  
 .content-container {
+  // max-height: calc(300vh - 350px);
   overflow-y: auto;
   padding-bottom: 20px;
-  width: 60vw;
 } 
+
+.secondOrder{
+  margin-top: 20px;
+}
+
+.example-stepper {
+  display: inline-block;
+  background-color:#f1f1f1;
+  width: 43vw;
+  height: 14vh;
+}
+
+
+mat-step{
+  
+  margin-top: 50px;
+}
+
+
+.top-label-stepper{
+  // background-color: #f1f1f1;
+  background-color: red;
+  width: 30vw;
+  height: 15vh;
+}
+.form-stepper{
+  background-color: blue;
+}
+
+
 
   @media screen and (max-width:950px){
     ul li{
@@ -120,21 +176,3 @@ img{
           margin-left: 20px;
         }
   }
-  
- 
-  
-  
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  

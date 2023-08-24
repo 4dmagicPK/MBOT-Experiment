@@ -1,0 +1,72 @@
+[
+  {
+    "cart1": 
+      {
+        "imageUrl": "https://images.pexels.com/photos/162031/dubai-tower-arab-khalifa-162031.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "heading": "LED-WAND",
+        "paragraph": "GroBe Eckvitrine",
+        "status": "reserved until 08.06.2023",
+        "period": "23.06.2023 - 01.07.2023",
+        "ButtonText": "Data Exchange",
+        "subCart":{
+            "Description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis unde explicabo, nihil beatae quo.",
+            "Bespielung":"3D Bespielung moglich!",
+            "Resolution":"896 x 2048 Pixel",
+            "Format":"3.5 x 8 Meter",
+            "Conditions":["Mindestmietdauer: 1 Woche","Datenanlieferung: min 1 Woche vorcher"],
+            "Contact":["Vorname, Nachname","E-Mail","Telefonnummer"]
+        }
+      },
+      "cart12": 
+      {
+        "imageUrl": "https://images.pexels.com/photos/162031/dubai-tower-arab-khalifa-162031.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "heading": "MAGAZIN",
+        "paragraph": "Volle DIN A4 Seite",
+        "zeitraum": "23.06.2023 - 01.07.2023",
+        "ButtonText1": "Produkt neu bestellen",
+        "ButtonText2": "Daten hochladen",
+        "subCart":{
+            "Description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis unde explicabo, nihil beatae quo.",
+            "Bespielung":"3D Bespielung moglich!",
+            "Resolution":"896 x 2048 Pixel",
+            "Format":"3.5 x 8 Meter",
+            "Conditions":["Mindestmietdauer: 1 Woche","Datenanlieferung: min 1 Woche vorcher"],
+            "Contact":["Vorname, Nachname","E-Mail","Telefonnummer"]
+        }
+      },
+      "cart2": 
+      {
+        "imageUrl": "https://cdn.britannica.com/37/135437-050-A12461CC/Burj-Khalifa-world-Sheikh-Khalifah-ibn-Zayid-2010.jpg",
+        "heading": "LED-WAND",
+        "paragraph": "GroBe Eckvitrine",
+        "zeitraum": "23.06.2023 - 01.07.2023",
+        "ButtonText1": "Produkt neu bestellen",
+        "ButtonText2": "Daten hochladen",
+        "subCart":{
+            "Description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis unde explicabo, nihil beatae quo.",
+            "Bespielung":"3D Bespielung moglich!",
+            "Resolution":"896 x 2048 Pixel",
+            "Format":"3.5 x 8 Meter",
+            "Conditions":["Mindestmietdauer: 1 Woche","Datenanlieferung: min 1 Woche vorcher"],
+            "Contact":["Vorname, Nachname","E-Mail","Telefonnummer"]
+        }
+      },
+      "cart3": 
+      {
+        "imageUrl": "https://cdn-imgix.headout.com/collection-card-image/158/image/09c609a1134ea7b034ee4cbd61bdbba5-158-dubai-002-dubai-burj-khalifa-01.jpg",
+        "heading": "WEBSITE",
+        "paragraph": "Promo Teaser XL",
+        "zeitraum": "23.06.2023 - 01.07.2023",
+        "ButtonText1": "Produkt neu bestellen",
+        "ButtonText2": "Daten hochladen",
+        "subCart":{
+            "Description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis unde explicabo, nihil beatae quo.",
+            "Bespielung":"3D Bespielung moglich!",
+            "Resolution":"896 x 2048 Pixel",
+            "Format":"3.5 x 8 Meter",
+            "Conditions":["Mindestmietdauer: 1 Woche","Datenanlieferung: min 1 Woche vorcher"],
+            "Contact":["Vorname, Nachname","E-Mail","Telefonnummer"]
+        }
+      }
+  }
+]

@@ -1,0 +1,368 @@
+
+<app-navbar></app-navbar>
+
+
+
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+     
+    >
+    
+    <ng-container *ngIf="tile.text === 'One'" class="containerOfNavbar">
+      <div fxLayout="row" fxLayoutAlign="center start" fxFill>
+        <div fxLayout="column" fxLayoutGap="25px">
+          <p>My Orders > Orders</p>
+          <ul>
+            <li><a routerLink="/all-orders" *ngIf="currentPath === '/all-orders'"><b>Orders</b></a></li>
+            <li><a routerLink="/single-order" *ngIf="currentPath !== '/all-orders'">Single Order</a></li>
+            <li><a routerLink="/shopping-cart">Shopping cart</a></li>
+            <li><a routerLink="/waiting-list">Waiting list</a></li>
+            <li><a routerLink="/cancellation-order">Cancellations</a></li>
+            
+           </ul>
+        </div>
+     
+     </div>
+    </ng-container>
+
+    
+    <ng-container *ngIf="tile.text === 'Two'" >
+        <div fxLayout="column" fxLayoutAlign="start start" fxFill *ngFor="let allOrdersData of allOrdersData">
+          
+          <div class="content-container">
+
+          <mat-card  class="example-card" fxLayout="column">
+              <p class="order-number">Order number: XXXXXXXXX</p>
+              
+            <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="start start">
+              
+              <img mat-card-lg-image src={{allOrdersData.cart1.imageUrl}} fxFlex="15" />
+              <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
+                
+                <mat-card-title fxLayoutAlign="start center">
+                  
+                  <div fxLayout="column" fxLayoutGap="1px">
+                    
+                    <p>{{allOrdersData.cart1.heading}}</p>
+                    <h3>{{allOrdersData.cart1.paragraph}}</h3>
+                  </div>
+                  
+                </mat-card-title>
+                
+                <mat-card-subtitle class="custom-margin" >
+
+
+                  <mat-stepper
+                  class="example-stepper" labelPosition="bottom"
+                  [orientation]="(stepperOrientation | async)!" >
+                  <mat-step class="form-step" [stepControl]="firstFormGroup" label="Order received" >
+                    <!-- <form [formGroup]="firstFormGroup">
+                      <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form> -->
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup" label="Waiting for upload">
+                    <!-- <form [formGroup]="secondFormGroup">
+                      <mat-form-field>
+                        <mat-label>Address</mat-label>
+                        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                               required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form> -->
+                  </mat-step>
+                  <mat-step [stepControl]="thirdFormGroup" label="Waiting for approval">
+                    <!-- <form [formGroup]="thirdFormGroup">
+                      <mat-form-field>
+                        <mat-label>Phone number</mat-label>
+                        <input matInput formControlName="thirdCtrl" placeholder="Ex. 12345678" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form> -->
+                  </mat-step>
+                  <mat-step [stepControl]="fourthFormGroup" label="Order completed">
+                    <!-- <form [formGroup]="fourthFormGroup">
+                      <mat-form-field>
+                        <mat-label>Phone number</mat-label>
+                        <input matInput formControlName="fourthCtrl" placeholder="Ex. 12345678" required>
+                      </mat-form-field>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form> -->
+                  </mat-step>
+                  <!-- <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <p>You are now done.</p>
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                    </div>
+                  </mat-step> -->
+                </mat-stepper>
+
+
+                  <!-- <ng-container [ngSwitch]="stepperOrientation | async">
+                    <div *ngSwitchCase="'horizontal'">Make your screen smaller to see a vertical stepper</div>
+                    <div *ngSwitchCase="'vertical'">Make your screen larger to see a horizontal stepper</div>
+                  </ng-container> -->
+                  
+                 
+
+
+
+
+                  
+
+
+                  <!-- <p>Status: {{allOrdersData.cart1.status}}</p> -->
+                  <!-- <p>d</p> -->
+                  <p>Period: {{allOrdersData.cart1.period}}</p>
+    
+                  <button (mouseover)="buttonTextOver()">{{buttonText}}</button>
+                  <button>{{allOrdersData.cart1.ButtonText}}</button>
+
+                  <p (click)="showDetails()" class="showDetails">{{showContent}}</p>
+                </mat-card-subtitle>
+              </div>
+            </div>
+          
+            <div class="details-container" *ngIf="showDetailsContainer">
+              <div class="border-up"></div>
+              <div fxLayout="row" fxLayoutGap="15px" fxLayoutWrap>
+                <div class="detail-box" fxFlex="50%" >
+                  <h3>Description:</h3>
+                  <p>{{allOrdersData.cart1.subCart.Description}}</p>
+                  <p>{{allOrdersData.cart1.subCart.Bespielung}}</p>
+                  <h3>Resolution:</h3>
+                  <p>{{allOrdersData.cart1.subCart.Resolution}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Format</h3>
+                  <p>{{allOrdersData.cart1.subCart.Format}}</p>
+                  <h3>Conditions:</h3>
+                  <p>{{allOrdersData.cart1.subCart.Conditions[0]}}</p>
+                  <p>{{allOrdersData.cart1.subCart.Conditions[1]}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Contact KaDeWe:</h3>
+                  <p>{{allOrdersData.cart1.subCart.Contact[0]}}</p>
+                  <p>{{allOrdersData.cart1.subCart.Contact[1]}}</p>
+                  <p>{{allOrdersData.cart1.subCart.Contact[2]}}</p>
+                  <button class="cancelBtn">Cancel Order</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="secondOrder">
+
+            <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="start start">
+              <img mat-card-lg-image src={{allOrdersData.cart12.imageUrl}} fxFlex="15" />
+          
+              <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
+                <mat-card-title fxLayoutAlign="start center">
+                  <div fxLayout="column" fxLayoutGap="1px">
+                    <p>{{allOrdersData.cart12.heading}}</p>
+                    <h3>{{allOrdersData.cart12.paragraph}}</h3>
+                  </div>
+                </mat-card-title>
+                <mat-card-subtitle class="custom-margin" >
+
+
+                  <mat-stepper
+                  class="example-stepper" labelPosition="bottom"
+                  [orientation]="(stepperOrientation | async)!" >
+                  <mat-step class="form-step" [stepControl]="firstFormGroup" label="Order received" >
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup" label="Waiting for upload">
+                  </mat-step>
+                  <mat-step [stepControl]="thirdFormGroup" label="Waiting for approval">
+                  </mat-step>
+                  <mat-step [stepControl]="fourthFormGroup" label="Order completed">
+                  </mat-step>
+                </mat-stepper>
+
+
+                  <p>Zeitraum: {{allOrdersData.cart12.zeitraum}}</p>
+                  <button>{{allOrdersData.cart12.ButtonText1}}</button>
+                  <button>{{allOrdersData.cart12.ButtonText2}}</button>
+                  <p (click)="showDetails0()" class="showDetails">{{showContent0}}</p>
+                </mat-card-subtitle>
+              </div>
+            </div>
+          
+            <div class="details-container" *ngIf="showDetailsContainer0">
+              <div class="border-up"></div>
+              <div fxLayout="row" fxLayoutGap="15px" fxLayoutWrap>
+                <div class="detail-box" fxFlex="50%" >
+                  <h3>Description:</h3>
+                  <p>{{allOrdersData.cart12.subCart.Description}}</p>
+                  <p>{{allOrdersData.cart12.subCart.Bespielung}}</p>
+                  <h3>Resolution:</h3>
+                  <p>{{allOrdersData.cart12.subCart.Resolution}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Format</h3>
+                  <p>{{allOrdersData.cart12.subCart.Format}}</p>
+                  <h3>Conditions:</h3>
+                  <p>{{allOrdersData.cart12.subCart.Conditions[0]}}</p>
+                  <p>{{allOrdersData.cart12.subCart.Conditions[1]}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Contact KaDeWe:</h3>
+                  <p>{{allOrdersData.cart12.subCart.Contact[0]}}</p>
+                  <p>{{allOrdersData.cart12.subCart.Contact[1]}}</p>
+                  <p>{{allOrdersData.cart12.subCart.Contact[2]}}</p>
+                  <button class="cancelBtn">Cancel Order</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          </mat-card>
+        
+          <mat-card  class="example-card" fxLayout="column">
+            <p>Order number: XXXXXXXXX</p>
+            <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="start start">
+              <img mat-card-lg-image src={{allOrdersData.cart2.imageUrl}} fxFlex="15" />
+          
+              <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
+                <mat-card-title fxLayoutAlign="start center">
+                  <div fxLayout="column" fxLayoutGap="1px">
+                    <p>{{allOrdersData.cart2.heading}}</p>
+                    <h3>{{allOrdersData.cart2.paragraph}}</h3>
+                  </div>
+                </mat-card-title>
+                <mat-card-subtitle class="custom-margin" >
+                  <mat-stepper
+                  class="example-stepper" labelPosition="bottom"
+                  [orientation]="(stepperOrientation | async)!" >
+                  <mat-step class="form-step" [stepControl]="firstFormGroup" label="Order received" >
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup" label="Waiting for upload">
+                  </mat-step>
+                  <mat-step [stepControl]="thirdFormGroup" label="Waiting for approval">
+                  </mat-step>
+                  <mat-step [stepControl]="fourthFormGroup" label="Order completed">
+                  </mat-step>
+                </mat-stepper>                 
+                  <p>Zeitraum: {{allOrdersData.cart2.zeitraum}}</p>
+                  <button>{{allOrdersData.cart2.ButtonText1}}</button>
+                  <button>{{allOrdersData.cart2.ButtonText2}}</button>
+                  <p (click)="showDetails1()" class="showDetails">{{showContent1}}</p>
+                </mat-card-subtitle>
+              </div>
+            </div>
+          
+            <div class="details-container" *ngIf="showDetailsContainer1">
+              <div class="border-up"></div>
+              <div fxLayout="row" fxLayoutGap="15px" fxLayoutWrap>
+                <div class="detail-box" fxFlex="50%" >
+                  <h3>Description:</h3>
+                  <p>{{allOrdersData.cart2.subCart.Description}}</p>
+                  <p>{{allOrdersData.cart2.subCart.Bespielung}}</p>
+                  <h3>Resolution:</h3>
+                  <p>{{allOrdersData.cart2.subCart.Resolution}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Format</h3>
+                  <p>{{allOrdersData.cart2.subCart.Format}}</p>
+                  <h3>Conditions:</h3>
+                  <p>{{allOrdersData.cart2.subCart.Conditions[0]}}</p>
+                  <p>{{allOrdersData.cart2.subCart.Conditions[1]}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Contact KaDeWe:</h3>
+                  <p>{{allOrdersData.cart2.subCart.Contact[0]}}</p>
+                  <p>{{allOrdersData.cart2.subCart.Contact[1]}}</p>
+                  <p>{{allOrdersData.cart2.subCart.Contact[2]}}</p>
+                  <button class="cancelBtn">Cancel Order</button>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+
+          <mat-card  class="example-card" fxLayout="column">
+            <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="start start" >
+              <!-- <div class="image-container"> -->
+              <img mat-card-lg-image src={{allOrdersData.cart3.imageUrl}} fxFlex="15" />
+            <!-- </div> -->
+              <div fxLayout="row" fxLayoutAlign="start start" fxFlex="80">
+                <mat-card-title fxLayoutAlign="start center">
+                  <div fxLayout="column" fxLayoutGap="1px">
+                    <p>{{allOrdersData.cart3.heading}}</p>
+                    <h3>{{allOrdersData.cart3.paragraph}}</h3>
+                  </div>
+                </mat-card-title>
+                <mat-card-subtitle class="custom-margin" >
+                  <mat-stepper
+                  class="example-stepper" labelPosition="bottom"
+                  [orientation]="(stepperOrientation | async)!" >
+                  <mat-step class="form-step" [stepControl]="firstFormGroup" label="Order received" >
+                  </mat-step>
+                  <mat-step [stepControl]="secondFormGroup" label="Waiting for upload">
+                  </mat-step>
+                  <mat-step [stepControl]="thirdFormGroup" label="Waiting for approval">
+                  </mat-step>
+                  <mat-step [stepControl]="fourthFormGroup" label="Order completed">
+                  </mat-step>
+                </mat-stepper>
+                  <p>Zeitraum: {{allOrdersData.cart3.zeitraum}}</p>
+                  <button>{{allOrdersData.cart3.ButtonText1}}</button>
+                  <button>{{allOrdersData.cart3.ButtonText2}}</button>
+                  <p (click)="showDetails2()" class="showDetails">{{showContent2}}</p>
+                </mat-card-subtitle>
+              </div>
+            </div>
+          
+            <div class="details-container" *ngIf="showDetailsContainer2">
+              <div class="border-up"></div>
+              <div fxLayout="row" fxLayoutGap="15px" fxLayoutWrap>
+                <div class="detail-box" fxFlex="50%" >
+                  <h3>Description:</h3>
+                  <p>{{allOrdersData.cart3.subCart.Description}}</p>
+                  <p>{{allOrdersData.cart3.subCart.Bespielung}}</p>
+                  <h3>Resolution:</h3>
+                  <p>{{allOrdersData.cart3.subCart.Resolution}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Format</h3>
+                  <p>{{allOrdersData.cart3.subCart.Format}}</p>
+                  <h3>Conditions:</h3>
+                  <p>{{allOrdersData.cart3.subCart.Conditions[0]}}</p>
+                  <p>{{allOrdersData.cart3.subCart.Conditions[1]}}</p>
+                </div>
+                <div class="detail-box" fxFlex="50%">
+                  <h3>Contact KaDeWe:</h3>
+                  <p>{{allOrdersData.cart3.subCart.Contact[0]}}</p>
+                  <p>{{allOrdersData.cart3.subCart.Contact[1]}}</p>
+                  <p>{{allOrdersData.cart3.subCart.Contact[2]}}</p>
+                  <button class="cancelBtn">Cancel Order</button>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+
+        </div>  
+      </div>
+      </ng-container>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+
+<app-sticky-footer></app-sticky-footer>
