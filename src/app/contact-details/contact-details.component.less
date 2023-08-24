@@ -1,0 +1,206 @@
+.example-card {
+    max-width: 800px;
+    margin-bottom: 8px;
+  }
+
+  p{
+    color: black;
+  }
+  button{
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    width: 162px;
+    height: 32px;
+  }
+  button:hover{
+    background-color:rgb(244, 244, 244) ;
+    color: black;
+    border: 2px solid white;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  .containerOfNavbar{
+    margin-top: 50px;
+    background-color: red;
+  }
+
+
+
+ 
+.content-container {
+  overflow-y: auto;
+  padding-bottom: 20px;
+  margin-top: 60px;
+  // background-color: red;
+} 
+
+.content-container p{
+  margin-bottom: 40px;
+}
+
+.form-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Futura PT", sans-serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.initials{
+  margin-bottom: 1em;
+}
+
+.form-field {
+  position: relative;
+  display: flex;
+  align-items: left;
+  margin-bottom: 30px;
+}
+
+.form-field input,
+.form-field textarea {
+  // flex: 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  outline: none;
+}
+
+.form-field label {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transition: transform 0.3s, font-size 0.3s;
+  pointer-events: none;
+}
+
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label {
+  transform: translateY(-100%);
+  font-size: 12px;
+}
+
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.buttons{
+  position: absolute;
+  right: 300px;
+}
+.buttons button{
+  margin-left: 20px;
+}
+
+.paymentInfo,.contact-person{
+display: flex;
+flex-wrap: wrap;
+
+}
+
+.delivery,.billing,.first-contact-person{
+// display: inline-block;
+width: 20vw;
+}
+
+.check-address{
+  margin-top: 15px;
+}
+
+.contact-person{
+  margin-top: 25px;
+}
+.input-fields{
+  border-right: 2px solid #e0e0e0;
+}
+
+.second-contact-person,.third-contact-person{
+  margin-left: 30px;
+}
+
+.second-contact-person mat-icon,
+.third-contact-person mat-icon{
+margin-left: 10px;
+padding-top: 5px;
+cursor: pointer;
+}
+.second-contact-person h3,
+.third-contact-person h3{
+  display: inline-block;
+}
+
+.add-contact-person{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-contact-person button{
+  margin-left: 40px;
+  width: 4vw;
+  height: 6vh;
+}
+.add-contact-person button:hover{
+  background-color: black;
+  color: white;
+}
+
+
+
+
+  @media screen and (max-width:950px){
+    ul li{
+      display: inline-block;
+      padding: 20px;
+    }
+    .custom-margin {
+      margin-left: 40px;
+    }
+    .showDetails{
+      cursor: pointer;
+      margin-top: 10px;
+      margin-left:180px ;
+        }
+        .details-container {
+          width: 600px;
+          height: 300px;
+          padding: 10px;
+        }
+  }
+
+  @media screen and (max-width:600px){
+    .showDetails{
+      cursor: pointer;
+      margin-top: 10px;
+      margin-left:90px ;
+        }
+        .details-container {
+          width: 500px;
+          height: 380px;
+          padding: 10px;
+        }
+        .cancelBtn{
+          position: relative;
+          top: 150px;
+          width: 100px;
+          margin-left: 20px;
+        }
+  }

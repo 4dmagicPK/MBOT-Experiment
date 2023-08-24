@@ -1,1 +1,630 @@
-<p>contact-details works!</p>
+<app-navbar></app-navbar>
+
+<mat-grid-list cols="4" rowHeight="150px">
+  <mat-grid-tile
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+  >
+    <ng-container *ngIf="tile.text === 'One'" class="containerOfNavbar">
+      <div fxLayout="row" fxLayoutAlign="center start" fxFill>
+        <div fxLayout="column" fxLayoutGap="25px">
+          <p>User > Contact Details</p>
+          <ul>
+            <li>
+              <a routerLink="/contact-details"><b>Contact details</b></a>
+            </li>
+            <li>
+              <a routerLink="/change-password">Change password</a>
+            </li>
+            <li><a routerLink="/">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="tile.text === 'Two'">
+      <div
+        fxLayout="column"
+        fxLayoutAlign="start start"
+        class="containers"
+        fxFill
+      >
+        <div class="content-container">
+          <h3>Contact</h3>
+
+          <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+            <div class="form-container">
+              <div class="initials">
+                <div class="form-field">
+                  <input
+                    type="text"
+                    id="brandname"
+                    placeholder=""
+                    name="brandname"
+                    [(ngModel)]="brandname"
+                    required
+                  />
+                  <label for="brandname">Brandname *</label>
+                  <div *ngIf="submitted && !brandname" class="error-message">
+                    Brandname is required
+                  </div>
+                </div>
+                <div class="paymentInfo">
+                  <div class="delivery">
+                    <h3>Delivery address</h3>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="deliveryName"
+                        placeholder=""
+                        name="deliveryName"
+                        [(ngModel)]="deliveryName"
+                        required
+                      />
+                      <label for="deliveryName">Name *</label>
+                      <div
+                        *ngIf="submitted && !deliveryName"
+                        class="error-message"
+                      >
+                        Name is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="deliveryHouse"
+                        placeholder=""
+                        name="deliveryHouse"
+                        [(ngModel)]="deliveryHouse"
+                        required
+                      />
+                      <label for="deliveryHouse">Street + House number *</label>
+                      <div
+                        *ngIf="submitted && !deliveryHouse"
+                        class="error-message"
+                      >
+                        Street + House number is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="deliveryPostCode"
+                        placeholder=""
+                        name="deliveryPostCode"
+                        [(ngModel)]="deliveryPostCode"
+                        required
+                      />
+                      <label for="deliveryPostCode">Post Code *</label>
+                      <div
+                        *ngIf="submitted && !deliveryPostCode"
+                        class="error-message"
+                      >
+                        Post Code is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="deliveryContact"
+                        placeholder=""
+                        name="deliveryContact"
+                        [(ngModel)]="deliveryContact"
+                        required
+                      />
+                      <label for="deliveryContact">Country *</label>
+                      <div
+                        *ngIf="submitted && !deliveryContact"
+                        class="error-message"
+                      >
+                        Contact is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="email"
+                        id="deliveryEmail"
+                        name="deliveryEmail"
+                        placeholder=""
+                        [(ngModel)]="deliveryEmail"
+                        required
+                      />
+                      <label for="email">Email <span> *</span></label>
+                      <div
+                        *ngIf="submitted && !deliveryEmail"
+                        class="error-message"
+                      >
+                        Email is required
+                      </div>
+                      <div
+                        *ngIf="
+                          submitted &&
+                          deliveryEmail &&
+                          !validateEmail(deliveryEmail)
+                        "
+                        class="error-message"
+                      >
+                        Invalid Email
+                      </div>
+                    </div>
+                  </div>
+                  <div class="billing">
+                    <h3>Billing address</h3>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="billingName"
+                        placeholder=""
+                        name="billingName"
+                        [(ngModel)]="billingName"
+                        required
+                      />
+                      <label for="billingName">Name *</label>
+                      <div
+                        *ngIf="submitted && !billingName"
+                        class="error-message"
+                      >
+                        Name is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="billingHouse"
+                        placeholder=""
+                        name="billingHouse"
+                        [(ngModel)]="billingHouse"
+                        required
+                      />
+                      <label for="billingHouse">Street + House number *</label>
+                      <div
+                        *ngIf="submitted && !billingHouse"
+                        class="error-message"
+                      >
+                        Street + House number is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="billingPostCode"
+                        placeholder=""
+                        name="billingPostCode"
+                        [(ngModel)]="billingPostCode"
+                        required
+                      />
+                      <label for="billingPostCode">Post Code *</label>
+                      <div
+                        *ngIf="submitted && !billingPostCode"
+                        class="error-message"
+                      >
+                        Post Code is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="billingContact"
+                        placeholder=""
+                        name="billingContact"
+                        [(ngModel)]="billingContact"
+                        required
+                      />
+                      <label for="billingContact">Country *</label>
+                      <div
+                        *ngIf="submitted && !billingContact"
+                        class="error-message"
+                      >
+                        Contact is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="email"
+                        id="billingEmail"
+                        name="billingEmail"
+                        placeholder=""
+                        [(ngModel)]="billingEmail"
+                        required
+                      />
+                      <label for="email">Email <span> *</span></label>
+                      <div
+                        *ngIf="submitted && !billingEmail"
+                        class="error-message"
+                      >
+                        Email is required
+                      </div>
+                      <div
+                        *ngIf="
+                          submitted &&
+                          billingEmail &&
+                          !validateEmail(billingEmail)
+                        "
+                        class="error-message"
+                      >
+                        Invalid Email
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="check-address">
+                <input type="checkbox">
+                <span>Billing address different from delivery address?</span>
+                </div>
+  
+                <div class="contact-person">
+                  <div class="first-contact-person">
+                    <h3>First Contact Person</h3>
+                    <div class="input-fields">
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="firstName"
+                        placeholder=""
+                        name="firstName"
+                        [(ngModel)]="firstName"
+                        required
+                      />
+                      <label for="firstName">First Name *</label>
+                      <div
+                        *ngIf="submitted && !firstName"
+                        class="error-message"
+                      >
+                      First Name is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="lastName"
+                        placeholder=""
+                        name="lastName"
+                        [(ngModel)]="lastName"
+                        required
+                      />
+                      <label for="lastName">Last Name *</label>
+                      <div
+                        *ngIf="submitted && !lastName"
+                        class="error-message"
+                      >
+                        Last Name
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="email"
+                        id="firstContactPersonEmail"
+                        name="firstContactPersonEmail"
+                        placeholder=""
+                        [(ngModel)]="firstContactPersonEmail"
+                        required
+                      />
+                      <label for="email">Email <span> *</span></label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonEmail"
+                        class="error-message"
+                      >
+                        Email is required
+                      </div>
+                      <div
+                        *ngIf="
+                          submitted &&
+                          deliveryEmail &&
+                          !validateEmail(deliveryEmail)
+                        "
+                        class="error-message"
+                      >
+                        Invalid Email
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="firstContactPersonCountryName"
+                        placeholder=""
+                        name="firstContactPersonCountryName"
+                        [(ngModel)]="firstContactPersonCountryName"
+                        required
+                      />
+                      <label for="firstContactPersonCountryName">Country *</label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonCountryName"
+                        class="error-message"
+                      >
+                        Country is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="number"
+                        id="firstContactPersonMobile"
+                        placeholder=""
+                        name="firstContactPersonMobile"
+                        [(ngModel)]="firstContactPersonMobile"
+                        required
+                      />
+                      <label for="firstContactPersonMobile">Mobile Number *</label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonMobile"
+                        class="error-message"
+                      >
+                      Mobile Number is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="number"
+                        id="firstContactPersonTelefon"
+                        placeholder=""
+                        name="firstContactPersonTelefon"
+                        [(ngModel)]="firstContactPersonTelefon"
+                        required
+                      />
+                      <label for="firstContactPersonTelefon">Telefon Number *</label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonTelefon"
+                        class="error-message"
+                      >
+                      Telefon Number is required
+                      </div>
+                    </div>     
+                  </div>
+                  </div>
+                  <div class="second-contact-person" *ngIf="showSecondContactPerson">
+                    <h3>Second Contact Person</h3>
+                    <mat-icon (click)="onCloseContact(true)">close</mat-icon>
+                    <div class="input-fields">
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="firstName2"
+                        placeholder=""
+                        name="firstName2"
+                        [(ngModel)]="firstName2"
+                        required
+                      />
+                      <label for="firstName2">First Name *</label>
+                      <div
+                        *ngIf="submitted && !firstName2"
+                        class="error-message"
+                      >
+                      First Name is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="lastName2"
+                        placeholder=""
+                        name="lastName2"
+                        [(ngModel)]="lastName2"
+                        required
+                      />
+                      <label for="lastName2">Last Name *</label>
+                      <div
+                        *ngIf="submitted && !lastName2"
+                        class="error-message"
+                      >
+                        Last Name
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="email"
+                        id="firstContactPersonEmail2"
+                        name="firstContactPersonEmail2"
+                        placeholder=""
+                        [(ngModel)]="firstContactPersonEmail2"
+                        required
+                      />
+                      <label for="firstContactPersonEmail2">Email <span> *</span></label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonEmail2"
+                        class="error-message"
+                      >
+                        Email is required
+                      </div>
+                      <div
+                        *ngIf="
+                          submitted &&
+                          deliveryEmail &&
+                          !validateEmail(deliveryEmail)
+                        "
+                        class="error-message"
+                      >
+                        Invalid Email
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="firstContactPersonCountryName2"
+                        placeholder=""
+                        name="firstContactPersonCountryName2"
+                        [(ngModel)]="firstContactPersonCountryName2"
+                        required
+                      />
+                      <label for="firstContactPersonCountryName2">Country *</label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonCountryName2"
+                        class="error-message"
+                      >
+                        Country is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="number"
+                        id="firstContactPersonMobile2"
+                        placeholder=""
+                        name="firstContactPersonMobile2"
+                        [(ngModel)]="firstContactPersonMobile2"
+                        required
+                      />
+                      <label for="firstContactPersonMobile2">Mobile Number *</label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonMobile2"
+                        class="error-message"
+                      >
+                      Mobile Number is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="number"
+                        id="firstContactPersonTelefon2"
+                        placeholder=""
+                        name="firstContactPersonTelefon2"
+                        [(ngModel)]="firstContactPersonTelefon2"
+                        required
+                      />
+                      <label for="firstContactPersonTelefon2">Telefon Number *</label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonTelefon2"
+                        class="error-message"
+                      >
+                      Telefon Number is required
+                      </div>
+                    </div>     
+                  </div>
+                  </div>
+
+                  <div class="third-contact-person" *ngIf="showThirdContactPerson">
+                    <h3>Third Contact Person</h3>
+                    <mat-icon (click)="onCloseContact(false)">close</mat-icon>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="firstName2"
+                        placeholder=""
+                        name="firstName2"
+                        [(ngModel)]="firstName2"
+                        required
+                      />
+                      <label for="firstName2">First Name *</label>
+                      <div
+                        *ngIf="submitted && !firstName2"
+                        class="error-message"
+                      >
+                      First Name is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="lastName2"
+                        placeholder=""
+                        name="lastName2"
+                        [(ngModel)]="lastName2"
+                        required
+                      />
+                      <label for="lastName2">Last Name *</label>
+                      <div
+                        *ngIf="submitted && !lastName2"
+                        class="error-message"
+                      >
+                        Last Name
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="email"
+                        id="firstContactPersonEmail2"
+                        name="firstContactPersonEmail2"
+                        placeholder=""
+                        [(ngModel)]="firstContactPersonEmail2"
+                        required
+                      />
+                      <label for="firstContactPersonEmail2">Email <span> *</span></label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonEmail2"
+                        class="error-message"
+                      >
+                        Email is required
+                      </div>
+                      <div
+                        *ngIf="
+                          submitted &&
+                          deliveryEmail &&
+                          !validateEmail(deliveryEmail)
+                        "
+                        class="error-message"
+                      >
+                        Invalid Email
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="text"
+                        id="firstContactPersonCountryName2"
+                        placeholder=""
+                        name="firstContactPersonCountryName2"
+                        [(ngModel)]="firstContactPersonCountryName2"
+                        required
+                      />
+                      <label for="firstContactPersonCountryName2">Country *</label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonCountryName2"
+                        class="error-message"
+                      >
+                        Country is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="number"
+                        id="firstContactPersonMobile2"
+                        placeholder=""
+                        name="firstContactPersonMobile2"
+                        [(ngModel)]="firstContactPersonMobile2"
+                        required
+                      />
+                      <label for="firstContactPersonMobile2">Mobile Number *</label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonMobile2"
+                        class="error-message"
+                      >
+                      Mobile Number is required
+                      </div>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        type="number"
+                        id="firstContactPersonTelefon2"
+                        placeholder=""
+                        name="firstContactPersonTelefon2"
+                        [(ngModel)]="firstContactPersonTelefon2"
+                        required
+                      />
+                      <label for="firstContactPersonTelefon2">Telefon Number *</label>
+                      <div
+                        *ngIf="submitted && !firstContactPersonTelefon2"
+                        class="error-message"
+                      >
+                      Telefon Number is required
+                      </div>
+                    </div>     
+                  </div>
+                  <div class="add-contact-person">
+                    <button type="button" (click)="onAddContact()">+</button>
+                  </div>
+                  
+                </div>
+              
+
+                <div class="buttons">
+                  <button type="button" (click)="onCancelForm()">Cancel</button>
+                  <button type="submit" class="submit" [disabled]="submitted">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </ng-container>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -23,6 +23,7 @@ import { SingleOrderComponent } from './single-order/single-order.component';
 import { CancellationOrderComponent } from './cancellation-order/cancellation-order.component';
 import { AllOrdersComponent } from './all-orders/all-orders.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ContactDetailsComponent } from './contact-details/contact-details.component';
 
 const routes: Routes = [
     {
@@ -131,7 +132,12 @@ const routes: Routes = [
     { 
         path: 'change-password', 
         component: ChangePasswordComponent,
-        data: { title: 'MBOT - All-Orders'} 
+        data: { title: 'MBOT - Change Password'} 
+    },
+    { 
+        path: 'contact-details', 
+        component: ContactDetailsComponent,
+        data: { title: 'MBOT - Contact Details'} 
     },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
