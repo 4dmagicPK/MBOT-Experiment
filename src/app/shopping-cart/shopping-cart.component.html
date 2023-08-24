@@ -8,9 +8,7 @@
       *ngFor="let tile of tiles"
       [colspan]="tile.cols"
       [rowspan]="tile.rows"
-     
     >
-    
     <ng-container *ngIf="tile.text === 'One'" class="containerOfNavbar">
       <div fxLayout="row" fxLayoutAlign="center start" fxFill>
         <div fxLayout="column" fxLayoutGap="25px">
